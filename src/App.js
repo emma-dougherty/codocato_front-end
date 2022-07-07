@@ -1,6 +1,7 @@
 import './App.css';
-import React, {useState} from "react"
+import React, {useState, useEffect} from "react"
 import ProfileContainer from './containers/ProfileContainer';
+import {PlayerService} from './services/Services';
 
 function App() {
 
@@ -31,6 +32,11 @@ function App() {
 
   // useEffect to load all savedProfiles on initial render
 
+  useEffect(() => {
+    PlayerService.getPlayers()
+    .then(profile => setSavedProfiles(profile))
+    
+}, [])
 
 
   return (

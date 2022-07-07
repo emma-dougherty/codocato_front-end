@@ -1,8 +1,8 @@
 const baseURL = 'http://localhost:8080';
 
-export const Service =  {
-    getStuff() {
-        return fetch(baseURL)
+export const PlayerService =  {
+    getPlayers() {
+        return fetch(`${baseURL}/players`)
         .then(res => res.json());
     }
 };
