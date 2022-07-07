@@ -1,41 +1,24 @@
 import './App.css';
 import React, {useState, useEffect} from "react"
 import ProfileContainer from './containers/ProfileContainer';
-import {PlayerService} from './services/Services';
+import {PlayerService, LessonService, EnrollmentService} from './services/Services';
+
 
 function App() {
 
   const [appState, setAppState] = useState("ProfileContainer");
   const [currentProfile, setCurrentProfile] = useState(null);
-  const [savedProfiles, setSavedProfiles] = useState([
-    // {
-    //   "name" : "Matt",
-    //   "score" : 0,
-    //   "_id" : 45355412542545142525
-    // },
-    // {
-    //   "name" : "Silvia",
-    //   "score" : 0,
-    //   "_id" : 53443534545343414
-    // },
-    // {
-    //   "name" : "Mario",
-    //   "score" : 0,
-    //   "_id" : 3314343143413
-    // },
-    // {
-    //   "name" : "Emma",
-    //   "score" : 0,
-    //   "_id" : 21312312311434
-    // }
-  ]);
-
-  // useEffect to load all savedProfiles on initial render
+  const [savedProfiles, setSavedProfiles] = useState([]);
+  const [savedLessons, setSavedLessons] = useState([]);
+  const [savedEnrollments, setSavedEnrollments] = useState([]);
 
   useEffect(() => {
     PlayerService.getPlayers()
     .then(profile => setSavedProfiles(profile))
-    
+    LessonService.getLessons()
+    .then(lesson => setSavedLessons(lesson))
+    EnrollmentService.getEnrollments()
+    .then(enrollment => setSavedEnrollments(enrollment))
 }, [])
 
 
