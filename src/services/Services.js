@@ -7,7 +7,7 @@ export const PlayerService =  {
     }
 };
 
-export const postPlayer = (payload) => {
+export const PostPlayer = (payload) => {
     const url = `${baseURL}/players`
     return fetch(url, {
         method: 'POST',

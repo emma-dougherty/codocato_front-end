@@ -2,9 +2,10 @@ import React, {useState} from "react"
 import cat_1 from "../assets/cat_1.png"
 import cat_2 from "../assets/cat_2.png"
 import cat_3 from "../assets/cat_3.png"
+import { PostPlayer } from "../services/Services"
 
 
-const NewProfileForm = () => {
+const NewProfileForm = ({addNewProfile}) => {
 
     const [name, setName] = useState("")
     const [avatar, setAvatar] = useState("")
@@ -17,15 +18,25 @@ const NewProfileForm = () => {
         setAvatar(event.target.value);
     }
 
-    // const handleSubmit()
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        const newProfile = {
+            "name" : name,
+            "avatar" : avatar
+        }
+        addNewProfile(newProfile)
+        setName("")
+        setAvatar("")
+        event.target.reset()
+    }
 
     return (
         <>
-            {/* <form onSubmit = {handleSubmit}> */}
-            <form>
+            <form onSubmit = {handleSubmit}>
+            
                 <input type = "text" placeholder = "your name" onChange = {handleNameChange} required />
 
-                <label>Choose Your codocato!</label>
+                <label>Choose Your Codocato!</label>
                 <div>
 
                 <label>
