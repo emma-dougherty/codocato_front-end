@@ -10,21 +10,22 @@ function App() {
   const [currentProfile, setCurrentProfile] = useState(null);
   const [savedProfiles, setSavedProfiles] = useState([]);
   const [savedLessons, setSavedLessons] = useState([]);
-  const [savedEnrollments, setSavedEnrollments] = useState([]);
+  // const [savedEnrollments, setSavedEnrollments] = useState([]);
 
   useEffect(() => {
     PlayerService.getPlayers()
     .then(profile => setSavedProfiles(profile))
     LessonService.getLessons()
     .then(lesson => setSavedLessons(lesson))
-    EnrollmentService.getEnrollments()
-    .then(enrollment => setSavedEnrollments(enrollment))
+    // EnrollmentService.getEnrollments()
+    // .then(enrollment => setSavedEnrollments(enrollment))
 }, [])
 
 const addNewProfile = (newProfile) => {
   PostPlayer(newProfile).then(profileWithId => {
     const newProfilesList = [...savedProfiles, profileWithId]
     setSavedProfiles(newProfilesList)
+    setCurrentProfile(profileWithId)
   })
 }
 
@@ -33,6 +34,7 @@ const addNewProfile = (newProfile) => {
     <>
       <h1>THIS IS THE APP CONTAINER</h1>
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile}/>}
+      
     </>
   );
 }
