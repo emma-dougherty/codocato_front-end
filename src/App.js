@@ -1,7 +1,8 @@
 import './App.css';
 import React, {useState, useEffect} from "react"
 import ProfileContainer from './containers/ProfileContainer';
-import {PlayerService, LessonService, EnrollmentService, PostPlayer} from './services/Services';
+import {PlayerService, LessonService, EnrollmentService, PostPlayer, CurrentEnrollmentService} from './services/Services';
+import LessonContainer from './containers/LessonContainer';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
   const [currentProfile, setCurrentProfile] = useState(null);
   const [savedProfiles, setSavedProfiles] = useState([]);
   const [savedLessons, setSavedLessons] = useState([]);
+  const [currentLesson, setCurrentLesson] = useState(null);
   // const [savedEnrollments, setSavedEnrollments] = useState([]);
 
   useEffect(() => {
@@ -26,6 +28,11 @@ const addNewProfile = (newProfile) => {
     const newProfilesList = [...savedProfiles, profileWithId]
     setSavedProfiles(newProfilesList)
     setCurrentProfile(profileWithId)
+    setAppState("LessonContainer")
+
+    CurrentEnrollmentService.getcurrentEnrollment(profileWithId.id)
+        .then((res) => setCurrentLesson(res.lesson))
+
   })
 }
 
@@ -33,8 +40,8 @@ const addNewProfile = (newProfile) => {
   return (
     <>
       <h1>THIS IS THE APP CONTAINER</h1>
-      {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile}/>}
-      
+      {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson}/>}
+      {appState === "LessonContainer" && <LessonContainer/>}
     </>
   );
 }
