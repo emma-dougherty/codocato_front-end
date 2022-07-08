@@ -16,7 +16,7 @@ const LessonContainer = ({currentLesson}) => {
         return <Prompt prompt = {prompt}/>
     })
 
-    console.log(promptNodes)
+    console.log(currentLesson)
 
     return (
         <>

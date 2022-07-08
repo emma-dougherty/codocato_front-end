@@ -32,8 +32,8 @@ const addNewProfile = (newProfile) => {
     CurrentEnrollmentService.getcurrentEnrollment(profileWithId.id)
         .then((res) => setCurrentLesson(res.lesson))
         .then(setAppState("LessonContainer"))
+        // CHECK ABOUT USING THENS WHERE YOU DONT USE THE RETURN
   })
-   //
 
 }
 
