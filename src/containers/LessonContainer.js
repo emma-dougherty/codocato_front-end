@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import Prompt from "../components/Prompt"
 
 const LContainer = styled.div`
     background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
@@ -11,12 +12,19 @@ const LContainer = styled.div`
 
 const LessonContainer = ({currentLesson}) => {
 
+    const promptNodes = currentLesson.prompts.map(prompt => {
+        return <Prompt prompt = {prompt}/>
+    })
+
+    console.log(promptNodes)
+
     return (
         <>
-            <h1>THIS IS THE LESSON CONTAINER</h1>
+
             <LContainer>
-            <h1>hello</h1>
-                {/* {currentLesson ? <img src = {`http://localhost:8080/${currentLesson.prompts[0].imageSrc}`}/> : null} */}
+
+                {currentLesson ? {promptNodes} : null}
+            
             </LContainer>
         </>
     )

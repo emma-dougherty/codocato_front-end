@@ -28,12 +28,13 @@ const addNewProfile = (newProfile) => {
     const newProfilesList = [...savedProfiles, profileWithId]
     setSavedProfiles(newProfilesList)
     setCurrentProfile(profileWithId)
-    setAppState("LessonContainer")
 
     CurrentEnrollmentService.getcurrentEnrollment(profileWithId.id)
         .then((res) => setCurrentLesson(res.lesson))
-
+        .then(setAppState("LessonContainer"))
   })
+   //
+
 }
 
 
