@@ -41,7 +41,7 @@ const addNewProfile = (newProfile) => {
     <>
       <h1>THIS IS THE APP CONTAINER</h1>
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson}/>}
-      {appState === "LessonContainer" && <LessonContainer/>}
+      {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson}/>}
     </>
   );
 }
