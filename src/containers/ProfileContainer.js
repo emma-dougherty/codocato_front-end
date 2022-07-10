@@ -5,7 +5,7 @@ import ProfileList from "../components/ProfileList";
 const ProfileContainer = ({savedProfiles, setCurrentProfile, addNewProfile, setAppState, setCurrentLesson, currentLesson}) => {
 
     const handleClick = () => {
-        setAppState("LessonContainer")
+        setAppState("AnimationContainer")
     }
 
     return (
