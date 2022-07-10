@@ -4,6 +4,7 @@ import ProfileContainer from './containers/ProfileContainer';
 import {PlayerService, LessonService, EnrollmentService, PostPlayer, CurrentEnrollmentService} from './services/Services';
 import LessonContainer from './containers/LessonContainer';
 import AnimationContainer from './containers/AnimationContainer';
+import GameAnimationContainer from './containers/GameAnimationContainer';
 
 
 function App() {
@@ -42,8 +43,9 @@ const addNewProfile = (newProfile) => {
   return (
     <>
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setAppState = {setAppState} currentLesson = {currentLesson}/>}
-      {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson}/>}
+      {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
       {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} />}
+      {appState === "GameAnimationContainer" && <GameAnimationContainer />}
     </>
   );
 }

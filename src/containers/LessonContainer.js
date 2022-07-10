@@ -11,7 +11,7 @@ const LContainer = styled.div`
 
 `
 
-const LessonContainer = ({currentLesson}) => {
+const LessonContainer = ({currentLesson, setAppState}) => {
 
     const [clickedPrompts, setClickedPrompts] = useState([])
 
@@ -29,7 +29,7 @@ const LessonContainer = ({currentLesson}) => {
 
                 {promptNodes}
 
-                {clickedPrompts.length == 4 ? <ScoreStar/> : null}
+                {clickedPrompts.length == 4 ? <ScoreStar setAppState = {setAppState}/> : null}
             
             </LContainer>
         </>
