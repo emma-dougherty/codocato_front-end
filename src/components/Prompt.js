@@ -4,7 +4,7 @@ const Prompt = ({prompt}) => {
 
     return (
         <>
-            <h3>{prompt.name}</h3>
+            <p>{prompt.name}</p>
         </>
     )
 }

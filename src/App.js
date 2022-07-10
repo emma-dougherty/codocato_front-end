@@ -31,7 +31,7 @@ const addNewProfile = (newProfile) => {
 
     CurrentEnrollmentService.getcurrentEnrollment(profileWithId.id)
         .then((res) => setCurrentLesson(res.lesson))
-        .then(setAppState("LessonContainer"))
+        // .then(setAppState("LessonContainer"))
         // CHECK ABOUT USING THENS WHERE YOU DONT USE THE RETURN
   })
 
@@ -40,8 +40,7 @@ const addNewProfile = (newProfile) => {
 
   return (
     <>
-      <h1>THIS IS THE APP CONTAINER</h1>
-      {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson}/>}
+      {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setAppState = {setAppState} currentLesson = {currentLesson}/>}
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson}/>}
     </>
   );

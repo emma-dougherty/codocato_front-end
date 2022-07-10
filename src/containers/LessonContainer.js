@@ -12,8 +12,9 @@ const LContainer = styled.div`
 
 const LessonContainer = ({currentLesson}) => {
 
-    const promptNodes = currentLesson.prompts.map(prompt => {
-        return <Prompt prompt = {prompt}/>
+
+    const promptNodes = currentLesson.prompts.map((prompt, index) => {
+        return <Prompt prompt = {prompt} key = {index}/>
     })
 
     console.log(currentLesson)
@@ -23,7 +24,7 @@ const LessonContainer = ({currentLesson}) => {
 
             <LContainer>
 
-                {currentLesson ? {promptNodes} : null}
+                {promptNodes}
             
             </LContainer>
         </>
