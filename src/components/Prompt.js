@@ -11,7 +11,7 @@ const ImagePrompt = styled.img`
 height : 7vh;
 `
 
-const Prompt = ({ prompt }) => {
+const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
 
     const popover = (
         <StyledPop>
@@ -24,10 +24,18 @@ const Prompt = ({ prompt }) => {
         </StyledPop>
     );
 
+    const handleClick = () => {
+        if (!clickedPrompts.includes(prompt)) {
+            const temp = [...clickedPrompts, prompt]
+            setClickedPrompts(temp)
+        }
+
+    }
+
     return (
         <>
             <OverlayTrigger trigger="click" placement="right" overlay={popover}>
-                <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} />
+                <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} />
             </OverlayTrigger>
 
         </>

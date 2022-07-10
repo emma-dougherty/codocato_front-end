@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useState} from "react"
 import styled from "styled-components"
 import Prompt from "../components/Prompt"
 
@@ -12,9 +12,11 @@ const LContainer = styled.div`
 
 const LessonContainer = ({currentLesson}) => {
 
+    const [clickedPrompts, setClickedPrompts] = useState([])
+
 
     const promptNodes = currentLesson.prompts.map((prompt, index) => {
-        return <Prompt prompt = {prompt} key = {index}/>
+        return <Prompt prompt = {prompt} setClickedPrompts = {setClickedPrompts} clickedPrompts = {clickedPrompts} key = {index}/>
     })
 
     console.log(currentLesson)
