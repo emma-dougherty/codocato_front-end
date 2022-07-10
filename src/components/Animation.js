@@ -1,6 +1,12 @@
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
 import lesson1_intro from "../assets/lesson1_intro.json"
+import styled from "styled-components"
+
+const AnimationBlock = styled.div `
+height: 100vh;
+
+`
 
 const Animation = () => {
 
@@ -16,7 +22,7 @@ const Animation = () => {
 
     return (
         <>
-            <div id = "lesson1_intro"/>
+            <AnimationBlock id = "lesson1_intro"/>
         </>
     )
 }
