@@ -15,7 +15,7 @@ const NodeContainer = styled.div`
 
 `
 
-const GameContainer = ({ currentLesson }) => {
+const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
 
     const [selectedPrompt, setSelectedPrompt] = useState(null)
     const [selectedGoal, setSelectedGoal] = useState(null)
@@ -26,8 +26,6 @@ const GameContainer = ({ currentLesson }) => {
             checkCorrect()
         }
     }, [selectedGoal, selectedPrompt])
-
-
 
     const checkCorrect = () => {
         if (selectedPrompt == selectedGoal) {
@@ -43,8 +41,8 @@ const GameContainer = ({ currentLesson }) => {
 
     currentLesson.prompts.map((prompt, index) => {
         const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="a" setSelectedPrompt={setSelectedPrompt} />
-
         promptsAndGoals.push(newPrompt)
+
         const newGoal = <Goal prompt={prompt} id="prompt" grid-area="b" setSelectedGoal=
             {setSelectedGoal} />
 

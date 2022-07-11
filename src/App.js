@@ -69,7 +69,7 @@ const updateCurrentLesson = () => {
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
       {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} />}
       {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
-      {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson}/>}
+      {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson} currentLesson = {currentLesson}/>}
       {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer/>}
 
     </>
