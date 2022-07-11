@@ -1,4 +1,4 @@
-import React from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
 import Animation from "../components/Animation"
 
@@ -14,20 +14,15 @@ overflow: hidden;
 
 const GameAnimationContainer = ({setAppState}) => {
 
-//THIS IS HOW WE WANT TO RENDER THE ANIMATION AND DISMISS THE CONTAINER AUTOMATICALLY BASED ON TIME - CURRENTLY NOT WORKING
 
-// useEffect(() => {
-//     timer();
-//     return () => clearTimeout(timer);
-// }, [])
+useEffect(() => {
+    const timer = setTimeout(() => {
+        setAppState("GameContainer")
+    }, 10000)
+    return () => clearTimeout(timer);
+    
+}, [])
 
-// const timer = setTimeout(() => {
-//     runTimer()
-// }, 9040)
-
-// const runTimer = () => {
-//     setAppState("LessonContainer")
-// }
 
 const handleClick = () => {
     setAppState("GameContainer")
@@ -36,7 +31,7 @@ const handleClick = () => {
 return (
     <>
     <LContainer>
-        <Animation/>
+        <Animation setAppState = {setAppState}/>
     </LContainer>
     <button onClick = {handleClick}>Continue</button>
     </>

@@ -1,4 +1,4 @@
-import React, {setTimeout, useEffect} from "react"
+import React, {useEffect} from "react"
 import styled from "styled-components"
 import Animation from "../components/Animation"
 
@@ -15,20 +15,13 @@ const LContainer = styled.div`
 
 const AnimationContainer = ({setAppState}) => {
 
-    //THIS IS HOW WE WANT TO RENDER THE ANIMATION AND DISMISS THE CONTAINER AUTOMATICALLY BASED ON TIME - CURRENTLY NOT WORKING
-
-    // useEffect(() => {
-    //     timer();
-    //     return () => clearTimeout(timer);
-    // }, [])
-    
-    // const timer = setTimeout(() => {
-    //     runTimer()
-    // }, 9040)
-
-    // const runTimer = () => {
-    //     setAppState("LessonContainer")
-    // }
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setAppState("LessonContainer")
+        }, 10000)
+        return () => clearTimeout(timer);
+        
+    }, [])
 
     const handleClick = () => {
         setAppState("LessonContainer")
