@@ -12,6 +12,7 @@ height: 100vh;
 
 const Animation = ({ appState, setAppState, currentLesson }) => {
 
+    // had to add logic below because lottie loads require a direct import
 
 
     useEffect(() => {
