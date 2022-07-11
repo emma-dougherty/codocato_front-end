@@ -6,9 +6,13 @@ import Animation from "../components/Animation"
 
 const LContainer = styled.div`
 background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
-background-size: cover;
-height: 100vh;
-overflow: hidden;
+    background-size: cover;
+    height: 100vh;
+    max-height: 100vh;
+    width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
 
 `
 

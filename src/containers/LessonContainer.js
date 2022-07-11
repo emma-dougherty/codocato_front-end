@@ -7,9 +7,17 @@ const LContainer = styled.div`
     background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
     background-size: cover;
     height: 100vh;
+    max-height: 100vh;
     width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
 
+`
+
+const PromptContainer = styled.div`
+display: flex;
+justify-content: space-around;
 `
 
 const LessonContainer = ({currentLesson, setAppState}) => {
@@ -28,7 +36,9 @@ const LessonContainer = ({currentLesson, setAppState}) => {
 
             <LContainer>
 
+                <PromptContainer>
                 {promptNodes}
+                </PromptContainer>
 
                 {clickedPrompts.length == 4 ? <ScoreStar setAppState = {setAppState}/> : null}
             

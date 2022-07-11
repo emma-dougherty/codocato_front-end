@@ -11,7 +11,7 @@ height: 100vh;
 const Animation = ({setAppState}) => {
 
     useEffect(() => {
-        const anim = lottie.loadAnimation({
+        lottie.loadAnimation({
             container: document.querySelector("#lesson1_intro"),
             animationData: lesson1_intro,
             renderer: "svg", // "canvas", "html"
