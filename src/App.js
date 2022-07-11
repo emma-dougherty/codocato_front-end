@@ -47,7 +47,7 @@ const addNewProfile = (newProfile) => {
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
       {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} />}
       {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
-      {appState === "GameContainer" && <GameContainer/>}
+      {appState === "GameContainer" && <GameContainer currentLesson = {currentLesson}/>}
     </>
   );
 }

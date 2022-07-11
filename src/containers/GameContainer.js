@@ -1,11 +1,74 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
+import Prompt from "../components/Prompt"
+import Goal from "../components/Goal"
+import GamePrompt from "../components/GamePrompt"
+import styled from "styled-components"
+
+const NodeContainer = styled.div`
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 5vh;
+    grid-template-areas: 
+    'a a a a'
+    'b b b b'
+
+`
+
+const GameContainer = ({ currentLesson }) => {
+
+    const [selectedPrompt, setSelectedPrompt] = useState(null)
+    const [selectedGoal, setSelectedGoal] = useState(null)
+    const [completed, setCompleted] = useState([])
+
+    useEffect(() => {
+        if (selectedGoal != null && selectedPrompt != null) {
+            checkCorrect()
+        }
+    }, [selectedGoal, selectedPrompt])
 
 
-const GameContainer = () => {
+
+    const checkCorrect = () => {
+        if (selectedPrompt == selectedGoal) {
+            if (!completed.includes(selectedPrompt)) {
+                const temp = [...completed, selectedPrompt]
+                setCompleted(temp)
+            }
+        }
+    }
+
+
+    const promptsAndGoals = []
+
+    currentLesson.prompts.map((prompt, index) => {
+        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="a" setSelectedPrompt={setSelectedPrompt} />
+
+        promptsAndGoals.push(newPrompt)
+        const newGoal = <Goal prompt={prompt} id="prompt" grid-area="b" setSelectedGoal=
+            {setSelectedGoal} />
+
+        promptsAndGoals.push(newGoal)
+    })
+
+
+
+
+    const promptsAndGoalsNodes = promptsAndGoals.map((item, index) => {
+        return item
+    })
+
+
+
+
+
 
     return (
         <>
-
+            <NodeContainer>
+                {promptsAndGoalsNodes}
+            </NodeContainer>
+            {completed.length == 4 ? <h2>You Win!</h2> : null}
         </>
     )
 }
@@ -47,8 +110,8 @@ export default GameContainer;
 //     droppable.on('droppable:returned', () => console.log('droppable:returned'));
 
 //     return (
-        <>
-            {/* <div className="container">
+<>
+    {/* <div className="container">
                 <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
                 <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
                 <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
@@ -62,23 +125,23 @@ export default GameContainer;
             <div></div>
             </div> */}
 
-            {/* <style>
+    {/* <style>
                 .item {height: 100%; }
                 .dropzone {outline: solid 1px; height: 50px; }
                 .draggable-dropzone--occupied {background: lightgreen; }
             </style> */}
 
-            {/* <article className="BlockLayout BlockLayout--typeFlex"> */}
-                {/* <div className="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied" data-dropzone="1">
+    {/* <article className="BlockLayout BlockLayout--typeFlex"> */}
+    {/* <div className="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied" data-dropzone="1">
                     <Block/>
                 </div> */}
-            {/* </article> */}
+    {/* </article> */}
 
-            {/* <article className="BlockLayout BlockLayout--typeGrid"> */}
-                {/* <div className="BlockWrapper BlockWrapper--isDropzone" data-dropzone="1">
+    {/* <article className="BlockLayout BlockLayout--typeGrid"> */}
+    {/* <div className="BlockWrapper BlockWrapper--isDropzone" data-dropzone="1">
                     <Block/>
                 </div> */}
-            {/* </article> */}
+    {/* </article> */}
 
-        </>
+</>
 // 
