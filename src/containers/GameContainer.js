@@ -1,11 +1,18 @@
-import React from "react"
+import React, {useEffect} from "react"
 
 
-const GameContainer = () => {
+const GameContainer = ({setAppState, updateCurrentLesson}) => {
+        
+    useEffect(() => {
+        // setAppState("GameWinAnimationContainer")
+        
+        updateCurrentLesson()
+    }, [])
+
 
     return (
         <>
-
+            <h1>this is the game container</h1>
         </>
     )
 }

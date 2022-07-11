@@ -3,7 +3,7 @@ import ProfileItem from "./ProfileItem";
 import { CurrentEnrollmentService } from "../services/Services";
 
 
-const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrentLesson }) => {
+const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrentLesson, setCurrentEnrollment }) => {
 
  
 
@@ -13,7 +13,10 @@ const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrent
         // include passed down method from app.js, that updated currentLesson state based on currentProfile
         
         CurrentEnrollmentService.getcurrentEnrollment(currentProfile.id)
-        .then((res) => setCurrentLesson(res.lesson))
+        .then((res) => {
+            setCurrentEnrollment(res)
+            setCurrentLesson(res.lesson)
+        })
         // .then(setAppState("LessonContainer"))
 
     }

@@ -31,6 +31,16 @@ export const EnrollmentService = {
     }
 };
 
+export const PostEnrollment = (payload) => {
+    const url = `${baseURL}/enrollments`
+    return fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' }
+    })
+        .then(res => res.json())
+} 
+
 export const CurrentEnrollmentService = {
     getcurrentEnrollment(id) {
         return fetch(`${baseURL}/players/${id}/enrollments/next`)
