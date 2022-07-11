@@ -3,7 +3,7 @@ import styled from "styled-components"
 import Animation from "../components/Animation"
 
 const LContainer = styled.div`
-    background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
+    background-image: ${props => `url(${props.bgimage})`};
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
@@ -29,7 +29,7 @@ const GameWinAnimationContainer = ({setAppState}) => {
     
     return (
         <>
-        <LContainer>
+        <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
             <Animation/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>

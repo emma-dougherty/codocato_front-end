@@ -27,6 +27,7 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
         }
     }, [selectedGoal, selectedPrompt])
 
+
     const checkCorrect = () => {
         if (selectedPrompt == selectedGoal) {
             if (!completed.includes(selectedPrompt)) {
