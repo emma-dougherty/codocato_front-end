@@ -7,7 +7,7 @@ const GameContainer = ({setAppState, updateCurrentLesson}) => {
         // setAppState("GameWinAnimationContainer")
         
         updateCurrentLesson()
-    }, [])
+    })
 
 
     return (
