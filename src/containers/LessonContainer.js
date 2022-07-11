@@ -29,7 +29,7 @@ const LessonContainer = ({currentLesson, setAppState}) => {
         return <Prompt prompt = {prompt} setClickedPrompts = {setClickedPrompts} clickedPrompts = {clickedPrompts} key = {index}/>
     })
 
-    console.log(currentLesson)
+    // console.log(currentLesson)
 
     return (
         <>

@@ -71,6 +71,7 @@ const updateCurrentLesson = () => {
       {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
       {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson}/>}
       {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer/>}
+
     </>
   );
 }
