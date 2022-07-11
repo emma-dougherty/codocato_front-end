@@ -29,6 +29,7 @@ function App() {
     // .then(enrollment => setSavedEnrollments(enrollment))
 }, [])
 
+
 const addNewProfile = (newProfile) => {
   PostPlayer(newProfile)
   .then(profileWithId => {
@@ -70,7 +71,7 @@ const updateCurrentLesson = () => {
       {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} />}
       {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
       {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson} currentLesson = {currentLesson}/>}
-      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer/>}
+      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer setAppState={setAppState}/>}
 
     </>
   );

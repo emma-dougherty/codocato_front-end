@@ -46,7 +46,7 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
         const newGoal = <Goal prompt={prompt} id="prompt" grid-area="b" setSelectedGoal=
             {setSelectedGoal} />
 
-        promptsAndGoals.push(newGoal)
+        promptsAndGoals.unshift(newGoal)
     })
 
 
@@ -56,13 +56,18 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
         return item
     })
 
+    const handleClick = () => {
+        updateCurrentLesson()
+        setAppState("GameWinAnimationContainer")
+    }
+
 
     return (
         <>
             <NodeContainer>
                 {promptsAndGoalsNodes}
             </NodeContainer>
-            {completed.length == 4 ? <h2>You Win!</h2> : null}
+            {completed.length == 4 ? <button onClick={handleClick}>You win! Continue...</button> : null}
 
         </>
     )
