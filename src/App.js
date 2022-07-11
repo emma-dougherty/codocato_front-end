@@ -64,10 +64,10 @@ const updateCurrentLesson = () => {
     <>
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} currentLesson = {currentLesson} setCurrentEnrollment = {setCurrentEnrollment}/>}
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
-      {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} currentLesson = {currentLesson} />}
-      {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
+      {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} currentLesson = {currentLesson} appState = {appState} />}
+      {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} currentLesson = {currentLesson} appState = {appState} />}
       {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson} currentLesson = {currentLesson}/>}
-      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer setAppState={setAppState}/>}
+      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer setAppState={setAppState} currentLesson = {currentLesson} appState = {appState}/>}
 
     </>
   );

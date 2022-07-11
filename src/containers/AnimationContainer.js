@@ -17,7 +17,7 @@ const LContainer = styled.div`
 
 `
 
-const AnimationContainer = ({setAppState, currentLesson}) => {
+const AnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -34,7 +34,7 @@ const AnimationContainer = ({setAppState, currentLesson}) => {
     return (
         <>
         <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
-            <Animation/>
+            <Animation currentLesson = {currentLesson} appState = {appState}/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>
         </>

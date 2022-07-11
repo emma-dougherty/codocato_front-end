@@ -13,7 +13,7 @@ const LContainer = styled.div`
     overflow: hidden;
     `
 
-const GameWinAnimationContainer = ({setAppState}) => {
+const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -30,7 +30,7 @@ const GameWinAnimationContainer = ({setAppState}) => {
     return (
         <>
         <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
-            <Animation/>
+            <Animation setAppState = {setAppState} appState = {appState}/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>
         </>

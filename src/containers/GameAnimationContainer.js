@@ -16,7 +16,7 @@ background-image: ${props => `url(${props.bgimage})`};
 
 `
 
-const GameAnimationContainer = ({setAppState}) => {
+const GameAnimationContainer = ({appState, setAppState, currentLesson}) => {
 
 
 useEffect(() => {
@@ -34,8 +34,8 @@ const handleClick = () => {
 
 return (
     <>
-    <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.game.bgImgUrl}`}>
-        <Animation setAppState = {setAppState}/>
+    <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
+        <Animation setAppState = {setAppState} appState = {appState}/>
     </LContainer>
     <button onClick = {handleClick}>Continue</button>
     </>
