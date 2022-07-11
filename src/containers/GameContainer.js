@@ -59,16 +59,13 @@ const GameContainer = ({ currentLesson }) => {
     })
 
 
-
-
-
-
     return (
         <>
             <NodeContainer>
                 {promptsAndGoalsNodes}
             </NodeContainer>
             {completed.length == 4 ? <h2>You Win!</h2> : null}
+
         </>
     )
 }
