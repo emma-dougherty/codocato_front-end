@@ -29,6 +29,7 @@ function App() {
     // .then(enrollment => setSavedEnrollments(enrollment))
 }, [])
 
+
 const addNewProfile = (newProfile) => {
   PostPlayer(newProfile)
   .then(profileWithId => {
@@ -44,13 +45,10 @@ const addNewProfile = (newProfile) => {
         }
       )
       }
-        // .then(setAppState("LessonContainer"))
-        // CHECK ABOUT USING THENS WHERE YOU DONT USE THE RETURN
 
 
 const updateCurrentLesson = () => {
   
-  // const tempEnrollment = currentEnrollment
   const tempEnrollment = {...currentEnrollment, complete: true}
   PostEnrollment(tempEnrollment)
   
@@ -62,15 +60,15 @@ const updateCurrentLesson = () => {
 }
 
 
-
   return (
     <>
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} currentLesson = {currentLesson} setCurrentEnrollment = {setCurrentEnrollment}/>}
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
-      {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} />}
-      {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} />}
-      {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson}/>}
-      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer/>}
+      {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} currentLesson = {currentLesson} appState = {appState} />}
+      {appState === "GameAnimationContainer" && <GameAnimationContainer setAppState ={setAppState} currentLesson = {currentLesson} appState = {appState} />}
+      {appState === "GameContainer" && <GameContainer setAppState = {setAppState} updateCurrentLesson = {updateCurrentLesson} currentLesson = {currentLesson}/>}
+      {appState === "GameWinAnimationContainer" && <GameWinAnimationContainer setAppState={setAppState} currentLesson = {currentLesson} appState = {appState}/>}
+
     </>
   );
 }

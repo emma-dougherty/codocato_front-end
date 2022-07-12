@@ -6,7 +6,7 @@ import Animation from "../components/Animation"
 // CHARACTER APPEARING IN CENTRE, NEEDS TO ALIGN LEFT, ALSO REPEATING UNDERNEATH
 
 const LContainer = styled.div`
-    background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
+    background-image: ${props => `url(${props.bgimage})`};
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
@@ -17,7 +17,7 @@ const LContainer = styled.div`
 
 `
 
-const AnimationContainer = ({setAppState}) => {
+const AnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
@@ -33,8 +33,8 @@ const AnimationContainer = ({setAppState}) => {
     
     return (
         <>
-        <LContainer>
-            <Animation/>
+        <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
+            <Animation currentLesson = {currentLesson} appState = {appState}/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>
         </>

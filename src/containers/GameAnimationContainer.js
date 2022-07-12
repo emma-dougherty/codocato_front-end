@@ -5,7 +5,7 @@ import Animation from "../components/Animation"
    // CHARACTER APPEARING IN CENTRE, NEEDS TO ALIGN LEFT, ALSO REPEATING UNDERNEATH
 
 const LContainer = styled.div`
-background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
+background-image: ${props => `url(${props.bgimage})`};
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
@@ -16,7 +16,7 @@ background-image: url("http://localhost:8080/lesson_bgs/lesson1_bg-01.svg");
 
 `
 
-const GameAnimationContainer = ({setAppState}) => {
+const GameAnimationContainer = ({appState, setAppState, currentLesson}) => {
 
 
 useEffect(() => {
@@ -34,8 +34,8 @@ const handleClick = () => {
 
 return (
     <>
-    <LContainer>
-        <Animation setAppState = {setAppState}/>
+    <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
+        <Animation setAppState = {setAppState} appState = {appState}/>
     </LContainer>
     <button onClick = {handleClick}>Continue</button>
     </>
