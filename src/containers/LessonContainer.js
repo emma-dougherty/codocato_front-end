@@ -12,7 +12,12 @@ const LContainer = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
-
+`
+const StartContainer = styled.div`
+    ${'' /* display: flex;
+    justify-content: center; */}
+    width: 40vw;
+    margin: auto;
 `
 
 const PromptContainer = styled.div`
@@ -34,15 +39,17 @@ const LessonContainer = ({currentLesson, setAppState}) => {
     return (
         <>
 
-            <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
+
+
+            <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`>
 
                 <PromptContainer>
                 {promptNodes}
                 </PromptContainer>
-
-                {clickedPrompts.length == 4 ? <ScoreStar setAppState = {setAppState}/> : null}
-            
-            </LContainer>
+                <StartContainer>
+                    {clickedPrompts.length == 4 ? <ScoreStar setAppState = {setAppState}/> : null}
+                </StartContainer>
+                </LContainer>
         </>
     )
 }
