@@ -9,7 +9,7 @@ import styled from 'styled-components';
 const NewProfileColumn = styled.div`
 display: flex;
 flex-direction: column;
-padding: 8vh;
+padding: 8vh 8vh 0vh 8vh;
 margin: auto;
 tex-align:center;
 `
@@ -19,9 +19,8 @@ background-color: #FF6666;
 border-radius: 100%;
 padding: 2vh;
 border:0px;
-justify-content: center;
 cursor:pointer;
-margin: 2vh;
+margin: 0vh;
 font-family: 'Fresh-Steak';
 color:#BEDEF4;
 font-size:3vh;
@@ -48,28 +47,59 @@ const AvatarRadioStyled = styled.input`
 
 const AvatarImageSelectorStyled = styled.img`
 cursor:pointer;
-margin: 2vh;
+margin: 1vh;
+width:20vh;
 `
 
 const ChooseAvatarLabelStyled = styled.label`
     font-weight: bold;
     font-size: 3.5vh;
     color: #FCE74A;
-    margin:3vh;
-    
+    margin:0;
+    padding:0;
 `
 
 const CreateProfileTitleStyled = styled.h2`
 color: #FCE74A;
 font-weight: bold;
 font-size: 5vh;
+padding:0;
+margin:0;
 `
 
 const RadioButtonsContainerStyled = styled.div`
 justify-content: space-between;
 display:flex;
 flex-direction:row;
+margin:3vh;
+`
+const InputTextWrapper = styled.div`
+display:flex;
+justify-content:center;
+`
 
+const CreateButtonWrapper = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+padding:0;
+margin:0;
+`
+
+const CreateProfileTitleWrapper = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+padding:0;
+margin:0;
+`
+
+const ChooseAvatarTitleWrapper = styled.div`
+display:flex;
+flex-direction:row;
+justify-content:center;
+padding:0;
+margin:0;
 `
 
 const NewProfileForm = ({addNewProfile}) => {
@@ -99,36 +129,39 @@ const NewProfileForm = ({addNewProfile}) => {
 
     return (
         <NewProfileColumn>
-
-            <CreateProfileTitleStyled>CREATE A NEW PROFILE</CreateProfileTitleStyled>
+            <CreateProfileTitleWrapper>
+                <CreateProfileTitleStyled>CREATE A NEW PROFILE</CreateProfileTitleStyled>
+            </CreateProfileTitleWrapper>
             <form onSubmit = {handleSubmit}>
 
-            
-                <InputTextBoxStyled type = "text" placeholder = "your name" onChange = {handleNameChange} required />
-
+                <InputTextWrapper>
+                    <InputTextBoxStyled type = "text" placeholder = "your name" onChange = {handleNameChange} required />
+                </InputTextWrapper>
                 <div>
-
-                    <ChooseAvatarLabelStyled>Choose Your Codocato!</ChooseAvatarLabelStyled><br/>
+                    <ChooseAvatarTitleWrapper>
+                        <ChooseAvatarLabelStyled>Choose Your Codocato!</ChooseAvatarLabelStyled><br/>
+                    </ChooseAvatarTitleWrapper>
 
                     <RadioButtonsContainerStyled>
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} />
-                            <AvatarImageSelectorStyled src={codocato_avatar1} height="70" width="70" />
+                            <AvatarImageSelectorStyled src={codocato_avatar1}  />
                         </label>
 
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} />
-                            <AvatarImageSelectorStyled src={codocato_avatar2} height="70" width="70" />
+                            <AvatarImageSelectorStyled src={codocato_avatar2}  />
                         </label>
 
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} />
-                            <AvatarImageSelectorStyled src={codocato_avatar3} height="70" width="70" />
+                            <AvatarImageSelectorStyled src={codocato_avatar3}  />
                         </label>
                     </RadioButtonsContainerStyled>
                 </div>
-
-                <CreateButtonStyled type="submit" value="CREATE" />
+                <CreateButtonWrapper>
+                    <CreateButtonStyled type="submit" value="CREATE" />
+                </CreateButtonWrapper>
             </form>
         </NewProfileColumn>
     )

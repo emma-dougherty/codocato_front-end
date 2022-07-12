@@ -2,15 +2,17 @@ import React, { useEffect, useState } from "react"
 import ProfileItem from "./ProfileItem";
 import { CurrentEnrollmentService } from "../services/Services";
 import styled from 'styled-components';
-
+import { Scrollbars } from 'react-custom-scrollbars-2';
 
 const Column = styled.div`
 display: flex;
 flex-direction: column;
-padding: 7vh;
+padding: 5vh;
 background-color: #38B6FF;
-border-radius:10%;
-margin: 2vh;
+border-radius:5vh 0vh 0vh 5vh;
+margin: 0.1vh;
+overflow: hidden ;
+max-height: 65vh;
 ${'' /* background-image: repeating-linear-gradient(45deg, #3ba7ee 0, #3ba7ee 2.5px, transparent 0, transparent 50%);
 background-size: 16px 16px;
 background-color: #dceef4; */}
@@ -21,6 +23,11 @@ font-weight: bold;
 font-size:3vh;
 font-family: 'Fresh-Steak';
 `
+// const ScrollbarStyled = styled.Scrollbars`
+// width: 500;
+// height: 500;
+
+// `
 
 const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrentLesson, setCurrentEnrollment }) => {
 
@@ -48,10 +55,13 @@ const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrent
 
     return (
         <Column>
-            <SelectProfileTitleStyled>OR SELECT YOUR PROFILE</SelectProfileTitleStyled>
-            <ul>
-                {profileNodes}
-            </ul>
+            
+                <SelectProfileTitleStyled>OR SELECT YOUR PROFILE</SelectProfileTitleStyled>
+                <Scrollbars>
+                <ul>
+                    {profileNodes}
+                </ul>
+            </Scrollbars>
         </Column>
     )
 }
