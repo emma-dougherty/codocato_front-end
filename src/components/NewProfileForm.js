@@ -48,7 +48,10 @@ const AvatarRadioStyled = styled.input`
 const AvatarImageSelectorStyled = styled.img`
 cursor:pointer;
 margin: 1vh;
-width:20vh;
+width:30vh;
+padding-left: 4vh;
+padding-right: 4vh;
+
 `
 
 const ChooseAvatarLabelStyled = styled.label`
@@ -130,7 +133,7 @@ const NewProfileForm = ({addNewProfile}) => {
     return (
         <NewProfileColumn>
             <CreateProfileTitleWrapper>
-                <CreateProfileTitleStyled>CREATE A NEW PROFILE</CreateProfileTitleStyled>
+                <CreateProfileTitleStyled>Create a new profile</CreateProfileTitleStyled>
             </CreateProfileTitleWrapper>
             <form onSubmit = {handleSubmit}>
 
@@ -139,7 +142,7 @@ const NewProfileForm = ({addNewProfile}) => {
                 </InputTextWrapper>
                 <div>
                     <ChooseAvatarTitleWrapper>
-                        <ChooseAvatarLabelStyled>Choose Your Codocato!</ChooseAvatarLabelStyled><br/>
+                        <ChooseAvatarLabelStyled>Choose your style:</ChooseAvatarLabelStyled><br/>
                     </ChooseAvatarTitleWrapper>
 
                     <RadioButtonsContainerStyled>
