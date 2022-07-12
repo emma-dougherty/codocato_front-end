@@ -25,12 +25,13 @@ background-size:cover;
 const StartButtonStyled = styled.button`
 background-color: #FF6666;
 border-radius: 100%;
-margin:2vh;
+margin:0;
+margin-right:5vw;
 padding: 3vh;
 font-size: 2vh;
 border:0px;
 color:#BEDEF4;
-font-size:4vh;
+font-size:6.5vh;
 font-family: 'Fresh-Steak';
 cursor:pointer;
 position: absolute;
