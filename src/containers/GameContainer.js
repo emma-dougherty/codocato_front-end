@@ -115,8 +115,8 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
                     }
                 }}
             >
-                    <StarContainer>
-                    {completed.length == 4 ? <ScoreStar setAppState={setAppState} /> : null}
+                    <StarContainer onClick = {handleClick}>
+                    {completed.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameWinAnimationContainer" /> : null}
                     </StarContainer>
             </Modal>
             <Wrapper>

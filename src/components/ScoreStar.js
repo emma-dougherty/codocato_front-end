@@ -8,10 +8,10 @@ height: 100%;
 width:100%;
 `
 
-const ScoreStar = ({ setAppState }) => {
+const ScoreStar = ({ setAppState, nextState }) => {
 
     const handleClick = () => {
-        setAppState("GameAnimationContainer")
+        setAppState(nextState)
     }
 
     return (
