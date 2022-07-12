@@ -1,18 +1,47 @@
 import React, { useEffect, useState } from "react"
-import Prompt from "../components/Prompt"
 import Goal from "../components/Goal"
 import GamePrompt from "../components/GamePrompt"
 import styled from "styled-components"
+import ScoreStar from "../components/ScoreStar"
+import Modal from "react-modal"
+
+const Wrapper = styled.div`
+background-image: repeating-linear-gradient(45deg, #eec43b 0, #eec43b 2.5px, transparent 0, transparent 50%);
+background-size: 16px 16px;
+background-color: #f4eedc;
+height: 100vh;
+width: 100vw;
+display: flex;
+
+`
+
+const GameWrapper = styled.div`
+padding-top: 20vh;
+max-width: 50vw;
+margin: auto;
+border: solid 2vw #368DCE;
+border-radius: 5vw;
+background-color: #FF6666;
+display: flex;
+justify-content: center;
+padding: 10vh;
+
+`
+
+const StarContainer = styled.div`
+    width: 40vw;
+    margin: auto;
+`
 
 const NodeContainer = styled.div`
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-gap: 5vh;
-    grid-template-areas: 
-    'a a a a'
-    'b b b b'
-
+display: flex;
+max-width: 40vw;
+flex-wrap: wrap;
+justify-content: space-around;
+align-items: center;
+align-content: center;
+gap: 5vw;
+row-gap: 20vh;
 `
 
 const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
@@ -20,12 +49,19 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
     const [selectedPrompt, setSelectedPrompt] = useState(null)
     const [selectedGoal, setSelectedGoal] = useState(null)
     const [completed, setCompleted] = useState([])
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     useEffect(() => {
         if (selectedGoal != null && selectedPrompt != null) {
             checkCorrect()
         }
     }, [selectedGoal, selectedPrompt])
+
+    useEffect(() => {
+        if (completed.length == 4){
+            setIsModalOpen(true)
+        }   
+     }, [completed])
 
 
     const checkCorrect = () => {
@@ -41,13 +77,13 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
     const promptsAndGoals = []
 
     currentLesson.prompts.map((prompt, index) => {
-        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="a" setSelectedPrompt={setSelectedPrompt} />
-        promptsAndGoals.push(newPrompt)
+        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="b" setSelectedPrompt={setSelectedPrompt} completed = {completed} />
+        promptsAndGoals.unshift(newPrompt)
 
-        const newGoal = <Goal prompt={prompt} id="prompt" grid-area="b" setSelectedGoal=
-            {setSelectedGoal} />
+        const newGoal = <Goal prompt={prompt} id="prompt" grid-area="a" setSelectedGoal=
+            {setSelectedGoal} completed={completed} />
 
-        promptsAndGoals.unshift(newGoal)
+        promptsAndGoals.push(newGoal)
     })
 
 
@@ -65,84 +101,34 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
 
     return (
         <>
-            <NodeContainer>
-                {promptsAndGoalsNodes}
-            </NodeContainer>
-            {completed.length == 4 ? <button onClick={handleClick}>You win! Continue...</button> : null}
+        <Modal
+                isOpen={isModalOpen}
+                ariaHideApp={false}
+                contentLabel="User options"
+                style = {{
+                    overlay: {
+                        backgroundColor: 'rgba(0,0,0, 0.5)'
+                    },
+                    content: {
+                        backgroundColor: 'rgba(255, 255, 255, 0)',
+                        border: 0,
+                    }
+                }}
+            >
+                    <StarContainer>
+                    {completed.length == 4 ? <ScoreStar setAppState={setAppState} /> : null}
+                    </StarContainer>
+            </Modal>
+            <Wrapper>
+                <GameWrapper>
+                    <NodeContainer>
+                        {promptsAndGoalsNodes}
+                    </NodeContainer>
+                </GameWrapper>
 
+            </Wrapper>
         </>
     )
 }
 
 export default GameContainer;
-
-// NONE OF THIS WORKS YET - NEED TO UNDERSTAND DROPPABLE AND HOW TO CONVERT VANILLA JS INTO REACT
-
-
-// import React from "react"
-// import styled from "styled-components"
-// import { Droppable } from '@shopify/draggable';
-// import Block from "../components/Block";
-// import UniqueDropzone from "../services/Droppable";
-
-// const Item = styled.div`
-//     height: 100%
-// `
-
-// const Dropzone = styled.div`
-//     outline: solid 1px; 
-//     height: 50px;
-// `
-
-// const DropzoneOcc = styled.div`
-
-// `
-
-
-
-// const GameContainer = () => {
-
-//     const droppable = new Droppable(document.querySelectorAll('.container'), {
-//         draggable: '.item',
-//         dropzone: '.dropzone'
-//     });
-
-//     droppable.on('droppable:dropped', () => console.log('droppable:dropped'));
-//     droppable.on('droppable:returned', () => console.log('droppable:returned'));
-
-//     return (
-<>
-    {/* <div className="container">
-                <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
-                <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
-                <DropzoneOcc className="dropzone draggable-dropzone--occupied"><Item className="item"><Block/></Item></DropzoneOcc>
-            </div>
-
-            <div className="container">
-                <Dropzone className="dropzone"></Dropzone>
-            </div>
-
-            <div className="BlockWrapper BlockWrapper--isDropzone">
-            <div></div>
-            </div> */}
-
-    {/* <style>
-                .item {height: 100%; }
-                .dropzone {outline: solid 1px; height: 50px; }
-                .draggable-dropzone--occupied {background: lightgreen; }
-            </style> */}
-
-    {/* <article className="BlockLayout BlockLayout--typeFlex"> */}
-    {/* <div className="BlockWrapper BlockWrapper--isDropzone draggable-dropzone--occupied" data-dropzone="1">
-                    <Block/>
-                </div> */}
-    {/* </article> */}
-
-    {/* <article className="BlockLayout BlockLayout--typeGrid"> */}
-    {/* <div className="BlockWrapper BlockWrapper--isDropzone" data-dropzone="1">
-                    <Block/>
-                </div> */}
-    {/* </article> */}
-
-</>
-// 
