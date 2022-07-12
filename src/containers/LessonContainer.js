@@ -61,11 +61,13 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
                 contentLabel="User options"
                 style={{
                     overlay: {
-                        backgroundColor: 'rgba(0,0,0, 0.5)'
+                        backgroundColor: 'rgba(0,0,0, 0.5)',
+                        overflow: "hidden"
                     },
                     content: {
                         backgroundColor: 'rgba(255, 255, 255, 0)',
                         border: 0,
+                        overflow: "hidden"
                     }
                 }}
             >
