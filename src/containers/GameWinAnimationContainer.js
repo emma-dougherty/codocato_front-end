@@ -17,7 +17,8 @@ const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setAppState("LessonContainer")
+            // setAppState("LessonContainer")
+            setAppState("AnimationContainer")
         }, 10000)
         return () => clearTimeout(timer);
         

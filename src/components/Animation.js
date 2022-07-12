@@ -7,7 +7,8 @@ import app_intro from "../assets/codocato-titles.json"
 import styled from "styled-components"
 
 const AnimationBlock = styled.div`
-height: 100vh;
+width: 100vw;
+padding: 0;
 
 `
 

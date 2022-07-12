@@ -21,7 +21,8 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setAppState("LessonContainer")
+            // setAppState("LessonContainer")
+            setAppState("GameWinAnimationContainer")
         }, 10000)
         return () => clearTimeout(timer);
         
@@ -35,6 +36,7 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
         <>
         <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
             <Animation currentLesson = {currentLesson} appState = {appState}/>
+
         </LContainer>
         <button onClick = {handleClick}>Continue</button>
         </>
