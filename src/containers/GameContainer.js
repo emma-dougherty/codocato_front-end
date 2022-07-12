@@ -29,8 +29,6 @@ padding: 10vh;
 `
 
 const StarContainer = styled.div`
-    ${'' /* display: flex;
-    justify-content: center; */}
     width: 40vw;
     margin: auto;
 `
