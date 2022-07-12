@@ -14,17 +14,23 @@ padding-right: 40px;
 margin: 40px;
 `
 
+
 const StyledPopHeader = styled.div`
 font-size: xx-large;
 text-transform: uppercase;
+
 `
 
 const StyledPopBody = styled.div`
 font-size: x-large;
+
 `
 
 const ImagePrompt = styled.img`
 height : 8vh;
+position: absolute;
+top: ${props => `${props.positionX}vh`};
+left:${props => `${props.positionY}vw`};
 `
 
 const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
@@ -52,7 +58,7 @@ const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
     return (
         <>
             <OverlayTrigger trigger="click" rootClose placement="bottom" overlay={popover}>
-                <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} />
+                <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} positionX = {prompt.positionX} positionY = {prompt.positionY} />
             </OverlayTrigger>
 
         </>

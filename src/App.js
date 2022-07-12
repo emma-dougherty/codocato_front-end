@@ -52,8 +52,7 @@ const updateCurrentLesson = () => {
   const tempEnrollment = {...currentEnrollment, complete: true}
   PostEnrollment(tempEnrollment)
   
-  .then(CurrentEnrollmentService.getcurrentEnrollment(currentProfile.id))
-  
+  .then(() => CurrentEnrollmentService.getcurrentEnrollment(currentProfile.id))
   .then((res) => {
     setCurrentEnrollment(res)
     setCurrentLesson(res.lesson)})
