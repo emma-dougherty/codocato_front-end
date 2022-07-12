@@ -47,6 +47,14 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
     return (
         <>
 
+
+            <LContainer bgimage={`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
+
+                <PromptContainer>
+                    {promptNodes}
+                </PromptContainer>
+            </LContainer>
+
             <Modal
                 isOpen={isModalOpen}
                 ariaHideApp={false}
@@ -65,13 +73,6 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
                     {clickedPrompts.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameAnimationContainer" /> : null}
                 </StarContainer>
             </Modal>
-
-            <LContainer bgimage={`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
-
-                <PromptContainer>
-                    {promptNodes}
-                </PromptContainer>
-            </LContainer>
         </>
     )
 }
