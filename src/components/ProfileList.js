@@ -12,7 +12,7 @@ background-color: #38B6FF;
 border-radius:5vh 0vh 0vh 5vh;
 margin: 0.1vh;
 overflow: hidden ;
-max-height: 65vh;
+max-height: 30vh;
 ${'' /* background-image: repeating-linear-gradient(45deg, #3ba7ee 0, #3ba7ee 2.5px, transparent 0, transparent 50%);
 background-size: 16px 16px;
 background-color: #dceef4; */}

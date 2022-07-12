@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import codocato_avatar1 from "../assets/codocato-avatar1.svg"
 import codocato_avatar2 from "../assets/codocato-avatar2.svg"
 import codocato_avatar3 from "../assets/codocato-avatar3.svg"
@@ -22,10 +22,11 @@ border:0px;
 cursor:pointer;
 margin: 0vh;
 font-family: 'Fresh-Steak';
-color:#BEDEF4;
+color:#fff;
 font-size:3vh;
 &:hover{
-    background-color: #FCE74A;
+    background-color: #FF3333;
+    color:#fff;
 }
 `
 
@@ -41,9 +42,9 @@ font-size:3vh;
 `
 
 const AvatarRadioStyled = styled.input`
- position: absolute;
-  opacity: 0;
-  `
+position: absolute;
+opacity: 0;
+`
 
 const AvatarImageSelectorStyled = styled.img`
 cursor:pointer;
@@ -105,7 +106,7 @@ padding:0;
 margin:0;
 `
 
-const NewProfileForm = ({addNewProfile}) => {
+const NewProfileForm = ({ addNewProfile }) => {
 
     const [name, setName] = useState("")
     const [avatar, setAvatar] = useState("")
@@ -121,8 +122,8 @@ const NewProfileForm = ({addNewProfile}) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         const newProfile = {
-            "name" : name,
-            "avatar" : avatar
+            "name": name,
+            "avatar": avatar
         }
         addNewProfile(newProfile)
         setName("")
@@ -133,32 +134,32 @@ const NewProfileForm = ({addNewProfile}) => {
     return (
         <NewProfileColumn>
             <CreateProfileTitleWrapper>
-                <CreateProfileTitleStyled>Create a new profile</CreateProfileTitleStyled>
+                <CreateProfileTitleStyled>Join the dojo</CreateProfileTitleStyled>
             </CreateProfileTitleWrapper>
-            <form onSubmit = {handleSubmit}>
+            <form onSubmit={handleSubmit}>
 
                 <InputTextWrapper>
-                    <InputTextBoxStyled type = "text" placeholder = "your name" onChange = {handleNameChange} required />
+                    <InputTextBoxStyled type="text" placeholder="your name" onChange={handleNameChange} required />
                 </InputTextWrapper>
                 <div>
                     <ChooseAvatarTitleWrapper>
-                        <ChooseAvatarLabelStyled>Choose your style:</ChooseAvatarLabelStyled><br/>
+                        <ChooseAvatarLabelStyled>Choose your style:</ChooseAvatarLabelStyled><br />
                     </ChooseAvatarTitleWrapper>
 
                     <RadioButtonsContainerStyled>
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} required/>
-                            <AvatarImageSelectorStyled src={codocato_avatar1}  />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} required />
+                            <AvatarImageSelectorStyled src={codocato_avatar1} />
                         </label>
 
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} required/>
-                            <AvatarImageSelectorStyled src={codocato_avatar2}  />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} required />
+                            <AvatarImageSelectorStyled src={codocato_avatar2} />
                         </label>
 
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} required/>
-                            <AvatarImageSelectorStyled src={codocato_avatar3}  />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} required />
+                            <AvatarImageSelectorStyled src={codocato_avatar3} />
                         </label>
                     </RadioButtonsContainerStyled>
                 </div>

@@ -17,7 +17,7 @@ font-family: 'Fresh-Steak';
     color: #FFFFFF ;
 }
 padding: 1.5vh;
-border-radius: 0.5vh;
+border-radius: 0.1vh;
 `
 
 const ProfileAvatarImageStyled = styled.img`

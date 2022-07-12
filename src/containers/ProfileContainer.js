@@ -30,14 +30,14 @@ margin-right:5vw;
 padding: 3vh;
 font-size: 2vh;
 border:0px;
-color:#BEDEF4;
+color:#fff;
 font-size:6.5vh;
 font-family: 'Fresh-Steak';
 cursor:pointer;
-position: absolute;
 justify-item: left;
 &:hover{
-    background-color: #FCE74A;
+    background-color: #FF3333;
+    color: #fff;
 }
 `
 
@@ -60,7 +60,6 @@ const ProfileContainer = ({savedProfiles, setCurrentProfile, addNewProfile, setA
             <GridStyle>
                 <NewProfileForm addNewProfile={addNewProfile}/>
                 <ProfileList savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setCurrentEnrollment = {setCurrentEnrollment} />
-               
             </GridStyle>
             <StartButtonAligner>
                 {currentLesson ? <StartButtonStyled onClick={handleClick}>Start</StartButtonStyled> : null}
