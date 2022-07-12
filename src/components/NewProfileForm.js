@@ -144,17 +144,17 @@ const NewProfileForm = ({addNewProfile}) => {
 
                     <RadioButtonsContainerStyled>
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} required/>
                             <AvatarImageSelectorStyled src={codocato_avatar1}  />
                         </label>
 
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} required/>
                             <AvatarImageSelectorStyled src={codocato_avatar2}  />
                         </label>
 
                         <label>
-                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} />
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} required/>
                             <AvatarImageSelectorStyled src={codocato_avatar3}  />
                         </label>
                     </RadioButtonsContainerStyled>
