@@ -62,7 +62,7 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
                 }}
             >
                 <StarContainer>
-                    {clickedPrompts.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameContainer" /> : null}
+                    {clickedPrompts.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameAnimationContainer" /> : null}
                 </StarContainer>
             </Modal>
 
