@@ -1,6 +1,52 @@
 import React from "react"
 import NewProfileForm from "../components/NewProfileForm";
 import ProfileList from "../components/ProfileList";
+import styled from 'styled-components';
+
+
+const GeneralContainer = styled.div`
+display: flex;
+flex-direction: column;
+background-color: #368DCE;
+height: 100vh;
+width:100vw;
+background-position: center;
+background-size: cover;
+font-family: 'Fresh-Steak'
+`
+
+const GridStyle = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+background-size:cover;
+`
+
+const StartButtonStyled = styled.button`
+background-color: #FF6666;
+border-radius: 100%;
+margin:2vh;
+padding: 3vh;
+font-size: 2vh;
+border:0px;
+color:#BEDEF4;
+font-size:4vh;
+font-family: 'Fresh-Steak';
+cursor:pointer;
+position: absolute;
+justify-item: left;
+&:hover{
+    background-color: #FCE74A;
+}
+`
+
+const StartButtonAligner = styled.div`
+display:flex;
+justify-content:flex-end;
+padding:2vh;
+background-color: #368DCE;
+
+`
 
 const ProfileContainer = ({savedProfiles, setCurrentProfile, addNewProfile, setAppState, setCurrentLesson, currentLesson, setCurrentEnrollment}) => {
 
@@ -9,12 +55,16 @@ const ProfileContainer = ({savedProfiles, setCurrentProfile, addNewProfile, setA
     }
 
     return (
-        <>
-            <h2>THIS IS THE PROFILE CONTAINER</h2>
-            <ProfileList savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setCurrentEnrollment = {setCurrentEnrollment} />
-            <NewProfileForm addNewProfile={addNewProfile}/>
-            {currentLesson ? <button onClick={handleClick}>Start</button> : null}
-        </>
+        <GeneralContainer>
+            <GridStyle>
+                <NewProfileForm addNewProfile={addNewProfile}/>
+                <ProfileList savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setCurrentEnrollment = {setCurrentEnrollment} />
+               
+            </GridStyle>
+            <StartButtonAligner>
+                {currentLesson ? <StartButtonStyled onClick={handleClick}>Start</StartButtonStyled> : null}
+            </StartButtonAligner>
+        </GeneralContainer>
     )
 
 

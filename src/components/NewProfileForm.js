@@ -1,9 +1,76 @@
 import React, {useState} from "react"
-import cat_1 from "../assets/cat_1.png"
-import cat_2 from "../assets/cat_2.png"
-import cat_3 from "../assets/cat_3.png"
+import codocato_avatar1 from "../assets/codocato-avatar1.svg"
+import codocato_avatar2 from "../assets/codocato-avatar2.svg"
+import codocato_avatar3 from "../assets/codocato-avatar3.svg"
 import { PostPlayer } from "../services/Services"
+import styled from 'styled-components';
 
+
+const NewProfileColumn = styled.div`
+display: flex;
+flex-direction: column;
+padding: 8vh;
+margin: auto;
+tex-align:center;
+`
+
+const CreateButtonStyled = styled.input`
+background-color: #FF6666;
+border-radius: 100%;
+padding: 2vh;
+border:0px;
+justify-content: center;
+cursor:pointer;
+margin: 2vh;
+font-family: 'Fresh-Steak';
+color:#BEDEF4;
+font-size:3vh;
+&:hover{
+    background-color: #FCE74A;
+}
+`
+
+const InputTextBoxStyled = styled.input`
+border-radius: 1vh;
+border-width: 1vh;
+border-color:#38B6FF;
+margin:3vh;
+width:30vh;
+height:5vh;
+font-family: 'Fresh-Steak';
+font-size:3vh;
+`
+
+const AvatarRadioStyled = styled.input`
+ position: absolute;
+  opacity: 0;
+  `
+
+const AvatarImageSelectorStyled = styled.img`
+cursor:pointer;
+margin: 2vh;
+`
+
+const ChooseAvatarLabelStyled = styled.label`
+    font-weight: bold;
+    font-size: 3.5vh;
+    color: #FCE74A;
+    margin:3vh;
+    
+`
+
+const CreateProfileTitleStyled = styled.h2`
+color: #FCE74A;
+font-weight: bold;
+font-size: 5vh;
+`
+
+const RadioButtonsContainerStyled = styled.div`
+justify-content: space-between;
+display:flex;
+flex-direction:row;
+
+`
 
 const NewProfileForm = ({addNewProfile}) => {
 
@@ -31,34 +98,39 @@ const NewProfileForm = ({addNewProfile}) => {
     }
 
     return (
-        <>
+        <NewProfileColumn>
+
+            <CreateProfileTitleStyled>CREATE A NEW PROFILE</CreateProfileTitleStyled>
             <form onSubmit = {handleSubmit}>
 
-            <label>Choose Your Codocato!</label><br/>
             
-                <input type = "text" placeholder = "your name" onChange = {handleNameChange} required />
+                <InputTextBoxStyled type = "text" placeholder = "your name" onChange = {handleNameChange} required />
 
                 <div>
 
-                <label>
-                        <input type="radio" name="avatar" value="cat_1" onChange={handleAvatarChange} />
-                        <img src={cat_1} height="70" width="70" />
-                    </label>
+                    <ChooseAvatarLabelStyled>Choose Your Codocato!</ChooseAvatarLabelStyled><br/>
 
-                    <label>
-                        <input type="radio" name="avatar" value="cat_2" onChange={handleAvatarChange} />
-                        <img src={cat_2} height="70" width="70" />
-                    </label>
+                    <RadioButtonsContainerStyled>
+                        <label>
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} />
+                            <AvatarImageSelectorStyled src={codocato_avatar1} height="70" width="70" />
+                        </label>
 
-                    <label>
-                        <input type="radio" name="avatar" value="cat_3" onChange={handleAvatarChange} />
-                        <img src={cat_3} height="70" width="70" />
-                    </label>
+                        <label>
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} />
+                            <AvatarImageSelectorStyled src={codocato_avatar2} height="70" width="70" />
+                        </label>
+
+                        <label>
+                            <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} />
+                            <AvatarImageSelectorStyled src={codocato_avatar3} height="70" width="70" />
+                        </label>
+                    </RadioButtonsContainerStyled>
                 </div>
 
-                <input type="submit" value="submit" />
+                <CreateButtonStyled type="submit" value="CREATE" />
             </form>
-        </>
+        </NewProfileColumn>
     )
 }
 

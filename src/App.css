@@ -1,3 +1,14 @@
+@font-face {
+  font-family: 'Fresh-Steak';
+  src: local("Fresh-Steak"),
+  url('./fonts/Fresh-Steak.ttf.woff') format('woff'),
+      url('./fonts/Fresh-Steak.ttf.svg#Fresh-Steak') format('svg'),
+      url('./fonts/Fresh-Steak.ttf.eot'),
+      url('./fonts/Fresh-Steak.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
 }
