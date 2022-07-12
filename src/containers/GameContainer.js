@@ -79,7 +79,7 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
     const promptsAndGoals = []
 
     currentLesson.prompts.map((prompt, index) => {
-        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="b" setSelectedPrompt={setSelectedPrompt} />
+        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="b" setSelectedPrompt={setSelectedPrompt} completed = {completed} />
         promptsAndGoals.unshift(newPrompt)
 
         const newGoal = <Goal prompt={prompt} id="prompt" grid-area="a" setSelectedGoal=

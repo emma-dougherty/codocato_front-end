@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import box from "../assets/box.png"
 import {motion} from "framer-motion"
@@ -8,6 +8,7 @@ min-height: 5vh;
 `
 
 const Goal = ({ prompt, setSelectedGoal, completed }) => {
+
 
     const handleClick = () => {
         setSelectedGoal(prompt.name)
