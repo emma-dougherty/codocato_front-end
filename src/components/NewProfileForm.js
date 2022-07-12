@@ -33,10 +33,11 @@ const NewProfileForm = ({addNewProfile}) => {
     return (
         <>
             <form onSubmit = {handleSubmit}>
+
+            <label>Choose Your Codocato!</label><br/>
             
                 <input type = "text" placeholder = "your name" onChange = {handleNameChange} required />
 
-                <label>Choose Your Codocato!</label>
                 <div>
 
                 <label>
