@@ -21,8 +21,8 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            // setAppState("LessonContainer")
-            setAppState("GameWinAnimationContainer")
+            setAppState("LessonContainer")
+
         }, 10000)
         return () => clearTimeout(timer);
         
@@ -38,7 +38,7 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
             <Animation currentLesson = {currentLesson} appState = {appState}/>
 
         </LContainer>
-        <button onClick = {handleClick}>Continue</button>
+        {/* <button onClick = {handleClick}>Continue</button> */}
         </>
     )
 }

@@ -9,7 +9,6 @@ import styled from "styled-components"
 const AnimationBlock = styled.div`
 width: 100vw;
 padding: 0;
-
 `
 
 const Animation = ({ appState, setAppState, currentLesson }) => {
