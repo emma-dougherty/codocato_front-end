@@ -7,13 +7,14 @@ import AnimationContainer from './containers/AnimationContainer';
 import GameAnimationContainer from './containers/GameAnimationContainer';
 import GameWinAnimationContainer from './containers/GameWinAnimationContainer';
 import GameContainer from './containers/GameContainer';
+import IntroAnimationContainer from './containers/IntroAnimationContainer'
 import { PostEnrollment } from './services/Services';
 
 
 
 function App() {
 
-  const [appState, setAppState] = useState("ProfileContainer");
+  const [appState, setAppState] = useState("IntroAnimationContainer");
   const [currentProfile, setCurrentProfile] = useState(null);
   const [savedProfiles, setSavedProfiles] = useState([]);
   const [savedLessons, setSavedLessons] = useState([]);
@@ -62,6 +63,7 @@ const updateCurrentLesson = () => {
 
   return (
     <>
+      {appState === "IntroAnimationContainer" && <IntroAnimationContainer setAppState ={setAppState} appState = {appState}/>}
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} addNewProfile={addNewProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} currentLesson = {currentLesson} setCurrentEnrollment = {setCurrentEnrollment}/>}
       {appState === "LessonContainer" && <LessonContainer currentLesson = {currentLesson} setAppState = {setAppState}/>}
       {appState === "AnimationContainer" && <AnimationContainer setAppState = {setAppState} currentLesson = {currentLesson} appState = {appState} />}

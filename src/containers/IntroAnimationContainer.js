@@ -1,9 +1,9 @@
-import React, {useEffect} from "react"
+import React, {useEffect} from "react";
 import styled from "styled-components"
 import Animation from "../components/Animation"
 
 const LContainer = styled.div`
-    background-image: ${props => `url(${props.bgimage})`};
+    ${'' /* background-image: ${props => `url(${props.bgimage})`}; */}
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
@@ -13,28 +13,23 @@ const LContainer = styled.div`
     overflow: hidden;
     `
 
-const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
+const IntroAnimationContainer = ({setAppState, appState}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setAppState("LessonContainer")
-        }, 10000)
+            setAppState("ProfileContainer")
+        }, 5000)
         return () => clearTimeout(timer);
         
     }, [])
 
-    const handleClick = () => {
-        setAppState("LessonContainer")
-    }
-    
-    return (
-        <>
-        <LContainer>
+    return(
+<>
+        <LContainer bgimage = {`http://localhost:8080/animation/codocato-titles.json}`}>
             <Animation setAppState = {setAppState} appState = {appState}/>
         </LContainer>
-        <button onClick = {handleClick}>Continue</button>
         </>
     )
 }
 
-export default GameWinAnimationContainer
+export default IntroAnimationContainer
