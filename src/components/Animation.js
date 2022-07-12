@@ -18,7 +18,7 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
     useEffect(() => {
         if (appState == "AnimationContainer") {
             lottie.loadAnimation({
-                container: document.querySelector("#lesson1_intro"),
+                container: document.querySelector("#animation"),
                 animationData: lesson1_intro,
                 renderer: "svg", // "canvas", "html"
                 loop: false, // boolean
@@ -27,7 +27,7 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
     } else if (appState == "GameAnimationContainer") {
         {
             lottie.loadAnimation({
-                container: document.querySelector("#lesson1_intro"),
+                container: document.querySelector("#animation"),
                 animationData: game1_intro,
                 renderer: "svg", // "canvas", "html"
                 loop: false, // boolean
@@ -37,7 +37,7 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
     } else if (appState == "GameWinAnimationContainer") {
         {
             lottie.loadAnimation({
-                container: document.querySelector("#lesson1_intro"),
+                container: document.querySelector("#animation"),
                 animationData: game1_outro,
                 renderer: "svg", // "canvas", "html"
                 loop: false, // boolean
@@ -61,7 +61,7 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
 }, [])
 return (
     <>
-        <AnimationBlock id="lesson1_intro" />
+        <AnimationBlock id="animation" />
     </>
 )
 }
