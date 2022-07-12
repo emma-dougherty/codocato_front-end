@@ -11,6 +11,7 @@ const LContainer = styled.div`
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
+    background-color:#368DCE;
     `
 
 const IntroAnimationContainer = ({setAppState, appState}) => {
