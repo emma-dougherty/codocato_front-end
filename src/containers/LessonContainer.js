@@ -41,7 +41,7 @@ const LessonContainer = ({currentLesson, setAppState}) => {
 
 
 
-            <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`>
+            <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
 
                 <PromptContainer>
                 {promptNodes}
