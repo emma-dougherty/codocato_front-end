@@ -17,15 +17,21 @@ const ScoreStar = ({ setAppState }) => {
 
     return (
         <>
-        <motion.div
-                    className="splash"
-                    initial={{ y: 1000 }}
-                    transition={{ duration: 1 }}
-                    animate={{ y: 0 }}
-                >
-            <StyledStart>
-                <img src={star} onClick={handleClick} />
-            </StyledStart>
+            <motion.div
+                className="splash"
+                initial={{ y: 1000 }}
+                transition={{ duration: 1 }}
+                animate={{ y: 0 }}
+            >
+                <StyledStart>
+                    <motion.img
+                        src={star}
+                        onClick={handleClick}
+                        animate={{
+                            rotate: [0, 0, 10, -10, 0],
+                        }}
+                        transition={{ repeat: Infinity, duration: 1.2, delay: 1 }} />
+                </StyledStart>
             </motion.div>
         </>
     )
