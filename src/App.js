@@ -9,7 +9,7 @@ import GameWinAnimationContainer from './containers/GameWinAnimationContainer';
 import GameContainer from './containers/GameContainer';
 import IntroAnimationContainer from './containers/IntroAnimationContainer'
 import { PostEnrollment } from './services/Services';
-// import AnimatedCursor from 'react-animated-cursor';
+import AnimatedCursor from 'react-animated-cursor';
 
 
 
@@ -65,7 +65,7 @@ function App() {
 
   return (
     <>
-      {/* <AnimatedCursor
+    {/* <AnimatedCursor
         innerSize={20}
         outerSize={8}
         color='252, 231, 74'
@@ -85,8 +85,8 @@ function App() {
           'textarea',
           'button',
           '.link'
-        ]} */}
-      />
+        ]} 
+      /> */}
       {appState === "IntroAnimationContainer" && <IntroAnimationContainer setAppState={setAppState} appState={appState} />}
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles={savedProfiles} setCurrentProfile={setCurrentProfile} addNewProfile={addNewProfile} setAppState={setAppState} setCurrentLesson={setCurrentLesson} currentLesson={currentLesson} setCurrentEnrollment={setCurrentEnrollment} />}
       {appState === "LessonContainer" && <LessonContainer currentLesson={currentLesson} setAppState={setAppState} />}
