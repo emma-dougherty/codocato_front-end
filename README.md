@@ -1,6 +1,6 @@
 # Codo Cato
 
-Join the coding dojo and learn the basics with Mrs. Miaowgi in this educational app for younger children. 
+Join the coding dojo and learn the basics with Mrs. Meowgi in this educational app for younger children. 
 
 Currently includes one lesson and game as proof of concept.
 
