@@ -25,56 +25,56 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
                 loop: false, // boolean
                 autoplay: true, // boolean
             })
-    } else if (appState == "GameAnimationContainer") {
-        {
-            lottie.loadAnimation({
-                container: document.querySelector("#animation"),
-                animationData: game1_intro,
-                renderer: "svg", // "canvas", "html"
-                loop: false, // boolean
-                autoplay: true, // boolean
-            })
-    }
-    } else if (appState == "GameWinAnimationContainer") {
-        {
-            lottie.loadAnimation({
-                container: document.querySelector("#animation"),
-                animationData: game1_outro,
-                renderer: "svg", // "canvas", "html"
-                loop: false, // boolean
-                autoplay: true, // boolean
-            })
-    }
-     } else if (appState == "IntroAnimationContainer") {
-        {
-            lottie.loadAnimation({
-                container: document.querySelector("#animation"),
-                animationData: app_intro,
-                renderer: "svg", // "canvas", "html"
-                loop: false, // boolean
-                autoplay: true, // boolean
-            })
-    }
-    }
+        } else if (appState == "GameAnimationContainer") {
+            {
+                lottie.loadAnimation({
+                    container: document.querySelector("#animation"),
+                    animationData: game1_intro,
+                    renderer: "svg", // "canvas", "html"
+                    loop: false, // boolean
+                    autoplay: true, // boolean
+                })
+            }
+        } else if (appState == "GameWinAnimationContainer") {
+            {
+                lottie.loadAnimation({
+                    container: document.querySelector("#animation"),
+                    animationData: game1_outro,
+                    renderer: "svg", // "canvas", "html"
+                    loop: false, // boolean
+                    autoplay: true, // boolean
+                })
+            }
+        } else if (appState == "IntroAnimationContainer") {
+            {
+                lottie.loadAnimation({
+                    container: document.querySelector("#animation"),
+                    animationData: app_intro,
+                    renderer: "svg", // "canvas", "html"
+                    loop: false, // boolean
+                    autoplay: true, // boolean
+                })
+            }
+        }
 
-    // console.log(animationToUse)
+        // console.log(animationToUse)
 
-    // MAYBE HAVE ANOTHER LOOK AT THIS!
+        // MAYBE HAVE ANOTHER LOOK AT THIS!
 
-    // anim.onLoopComplete = function() {
-    //     setAppState("GameContainer")
-    //     console.log("This is working")
-    // }
+        // anim.onLoopComplete = function() {
+        //     setAppState("GameContainer")
+        //     console.log("This is working")
+        // }
 
-    // anim.addEventListener('loopComplete', () => { console.log("This is firing") });
+        // anim.addEventListener('loopComplete', () => { console.log("This is firing") });
 
 
-}, [])
-return (
-    <>
-        <AnimationBlock id="animation" />
-    </>
-)
+    }, [])
+    return (
+        <>
+            <AnimationBlock id="animation" />
+        </>
+    )
 }
 
 export default Animation
