@@ -50,14 +50,12 @@
 }
 
 .prompt-popup-modal {
-  font-family: 'Fresh-Steak';
-  font-size: 170%;
-  color:  #FF6666;
+
   background-color: white;
-  width: 25vw;
-  height: 25vh;
+  width: 60vw;
+  height: 50vh;
   margin: auto;
-  margin-top: 60vh;
+  margin-top: 20vh;
   border: solid 1vw #368DCE;
   border-radius: 3vw;
   padding: 1vh 2vw 1vh 2vw;
@@ -65,8 +63,28 @@
   overflow: hidden;
 }
 
+#prompt-title {
+  /* font-family: 'Fresh-Steak';
+  font-size: 10%;
+  color:  #003399;
+  text-align: center; */
+  margin-top: 5vh;
+  max-height: 10vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#prompt-fact {
+  font-family: 'Fresh-Steak';
+  font-size: 300%;
+  color:  #000000;
+  text-align: center;
+}
+
+
 .prompt-popup-modal-overlay {
-  background-color: rgba(0,0,0, 0);
+  background-color: rgba(0, 0, 0, 0.332);
     width: none;
     height: none;
     position: fixed;
