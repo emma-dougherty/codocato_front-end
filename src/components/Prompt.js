@@ -3,6 +3,7 @@ import { OverlayTrigger } from "react-bootstrap"
 import styled from "styled-components"
 import Popover from "react-bootstrap/Popover"
 import Button from 'react-bootstrap/Button';
+import Modal from "react-modal";
 
 const StyledPop = styled.div`
 background-color: white;
@@ -26,6 +27,9 @@ font-size: x-large;
 
 `
 
+const ModalWrapper = styled.div`
+`
+
 const ImagePrompt = styled.img`
 height : 8vh;
 position: absolute;
@@ -35,17 +39,19 @@ left:${props => `${props.positionY}vw`};
 
 const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
 
-    const popover = (
-        <StyledPop>
-            <Popover id="popover-basic" >
-                <StyledPopHeader as="h1">{prompt.name}</StyledPopHeader>
-                <StyledPopBody>
-                    <p>{prompt.fact}</p>
-                    {/* <button onClick={}>X</button> */}
-                </StyledPopBody>
-            </Popover>
-        </StyledPop>
-    );
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // const popover = (
+    //     <StyledPop>
+    //         <Popover id="popover-basic" >
+    //             <StyledPopHeader as="h1">{prompt.name}</StyledPopHeader>
+    //             <StyledPopBody>
+    //                 <p>{prompt.fact}</p>
+    //                 {/* <button onClick={}>X</button> */}
+    //             </StyledPopBody>
+    //         </Popover>
+    //     </StyledPop>
+    // );
 
     const handleClick = () => {
         if (!clickedPrompts.includes(prompt)) {
@@ -53,13 +59,34 @@ const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
             setClickedPrompts(temp)
         }
 
+        setIsModalOpen(!isModalOpen)
+
+    }
+
+    const handleModalClick = () => {
+        setIsModalOpen(!isModalOpen)
     }
 
     return (
         <>
-            <OverlayTrigger trigger="click" rootClose placement="bottom" overlay={popover}>
-                <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} positionX = {prompt.positionX} positionY = {prompt.positionY} />
-            </OverlayTrigger>
+            {/* <OverlayTrigger trigger="click" rootClose placement="bottom" overlay={popover}> */}
+            <ModalWrapper onClick={handleModalClick} >
+            <Modal
+                isOpen={isModalOpen}
+                ariaHideApp={false}
+                contentLabel="User options"
+                onClick = {handleModalClick}
+                className = "prompt-popup-modal"
+                overlayClassName = "prompt-popup-modal-overlay"
+            >
+                <h3>{prompt.name}</h3>
+                <p>{prompt.fact}</p>
+            </Modal>
+            </ModalWrapper>
+
+
+            <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} positionX={prompt.positionX} positionY={prompt.positionY} />
+            {/* </OverlayTrigger> */}
 
         </>
     )

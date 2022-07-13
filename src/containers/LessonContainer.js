@@ -47,24 +47,6 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
     return (
         <>
 
-            <Modal
-                isOpen={isModalOpen}
-                ariaHideApp={false}
-                contentLabel="User options"
-                style={{
-                    overlay: {
-                        backgroundColor: 'rgba(0,0,0, 0.5)'
-                    },
-                    content: {
-                        backgroundColor: 'rgba(255, 255, 255, 0)',
-                        border: 0,
-                    }
-                }}
-            >
-                <StarContainer>
-                    {clickedPrompts.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameAnimationContainer" /> : null}
-                </StarContainer>
-            </Modal>
 
             <LContainer bgimage={`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
 
@@ -72,6 +54,27 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
                     {promptNodes}
                 </PromptContainer>
             </LContainer>
+
+            <Modal
+                isOpen={isModalOpen}
+                ariaHideApp={false}
+                contentLabel="User options"
+                style={{
+                    overlay: {
+                        backgroundColor: 'rgba(0,0,0, 0.5)',
+                        overflow: "hidden"
+                    },
+                    content: {
+                        backgroundColor: 'rgba(255, 255, 255, 0)',
+                        border: 0,
+                        overflow: "hidden"
+                    }
+                }}
+            >
+                <StarContainer>
+                    {clickedPrompts.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameAnimationContainer" /> : null}
+                </StarContainer>
+            </Modal>
         </>
     )
 }

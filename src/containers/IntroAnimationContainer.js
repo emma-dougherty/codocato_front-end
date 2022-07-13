@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import styled from "styled-components"
-import Animation from "../components/Animation"
+import IntroAnimation from "../components/IntroAnimation"
 
 const LContainer = styled.div`
     ${'' /* background-image: ${props => `url(${props.bgimage})`}; */}
@@ -27,7 +27,7 @@ const IntroAnimationContainer = ({setAppState, appState}) => {
     return(
 <>
         <LContainer bgimage = {`http://localhost:8080/animation/codocato-titles.json}`}>
-            <Animation setAppState = {setAppState} appState = {appState}/>
+            <IntroAnimation/>
         </LContainer>
         </>
     )

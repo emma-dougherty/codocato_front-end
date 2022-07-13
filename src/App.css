@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'Fresh-Steak';
   src: local("Fresh-Steak"),
-  url('./fonts/Fresh-Steak.ttf.woff') format('woff'),
-      url('./fonts/Fresh-Steak.ttf.svg#Fresh-Steak') format('svg'),
-      url('./fonts/Fresh-Steak.ttf.eot'),
-      url('./fonts/Fresh-Steak.ttf.eot?#iefix') format('embedded-opentype');
+    url('./fonts/Fresh-Steak.ttf.woff') format('woff'),
+    url('./fonts/Fresh-Steak.ttf.svg#Fresh-Steak') format('svg'),
+    url('./fonts/Fresh-Steak.ttf.eot'),
+    url('./fonts/Fresh-Steak.ttf.eot?#iefix') format('embedded-opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -43,7 +43,36 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.prompt-popup-modal {
+  font-family: 'Fresh-Steak';
+  font-size: 140%;
+  color:  #FF6666;
+  background-color: #FCE74A;
+  width: 25vw;
+  height: 20vh;
+  margin: auto;
+  margin-top: 60vh;
+  border: solid 1vw #368DCE;
+  border-radius: 3vw;
+  padding: 2vw;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.prompt-popup-modal-overlay {
+  background-color: rgba(0,0,0, 0);
+    width: none;
+    height: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
 }
