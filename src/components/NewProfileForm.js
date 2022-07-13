@@ -102,7 +102,7 @@ margin:0;
 `
 
 const AnimationBlock = styled.div`
-width: 15vw;
+width: 13vw;
 padding: 0;
 margin: 0;
 `
