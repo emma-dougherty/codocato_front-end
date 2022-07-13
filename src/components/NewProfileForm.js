@@ -49,7 +49,7 @@ opacity: 0;
 const AvatarImageSelectorStyled = styled.img`
 cursor:pointer;
 margin: 1vh;
-width:30vh;
+width:25vh;
 padding-left: 4vh;
 padding-right: 4vh;
 
