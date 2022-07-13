@@ -51,16 +51,16 @@
 
 .prompt-popup-modal {
   font-family: 'Fresh-Steak';
-  font-size: 140%;
+  font-size: 170%;
   color:  #FF6666;
-  background-color: #FCE74A;
+  background-color: white;
   width: 25vw;
-  height: 20vh;
+  height: 25vh;
   margin: auto;
   margin-top: 60vh;
   border: solid 1vw #368DCE;
   border-radius: 3vw;
-  padding: 2vw;
+  padding: 1vh 2vw 1vh 2vw;
   z-index: -1;
   overflow: hidden;
 }
