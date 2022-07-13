@@ -52,7 +52,6 @@ margin: 1vh;
 width:25vh;
 padding-left: 4vh;
 padding-right: 4vh;
-
 `
 
 const ChooseAvatarLabelStyled = styled.label`
