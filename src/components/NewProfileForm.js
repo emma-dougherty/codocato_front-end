@@ -1,9 +1,6 @@
 import React, { useState } from "react"
-import codocato_avatar1 from "../assets/codocato-avatar1.svg"
-import codocato_avatar2 from "../assets/codocato-avatar2.svg"
-import codocato_avatar3 from "../assets/codocato-avatar3.svg"
-import { PostPlayer } from "../services/Services"
 import styled from 'styled-components';
+import Avatar from "./Avatar"
 
 
 const NewProfileColumn = styled.div`
@@ -71,7 +68,6 @@ margin:0;
 `
 
 const RadioButtonsContainerStyled = styled.div`
-justify-content: space-between;
 display:flex;
 flex-direction:row;
 margin:3vh;
@@ -105,6 +101,12 @@ padding:0;
 margin:0;
 `
 
+const AnimationBlock = styled.div`
+width: 15vw;
+padding: 0;
+margin: 0;
+`
+
 const NewProfileForm = ({ addNewProfile }) => {
 
     const [name, setName] = useState("")
@@ -132,6 +134,7 @@ const NewProfileForm = ({ addNewProfile }) => {
 
     return (
         <NewProfileColumn>
+
             <CreateProfileTitleWrapper>
                 <CreateProfileTitleStyled>Join the dojo</CreateProfileTitleStyled>
             </CreateProfileTitleWrapper>
@@ -146,22 +149,29 @@ const NewProfileForm = ({ addNewProfile }) => {
                     </ChooseAvatarTitleWrapper>
 
                     <RadioButtonsContainerStyled>
+
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar1.svg" onChange={handleAvatarChange} required />
-                            <AvatarImageSelectorStyled src={codocato_avatar1} />
+                            <Avatar avatar="avatar1" />
+                            <AnimationBlock id="animation1" />
                         </label>
 
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar2.svg" onChange={handleAvatarChange} required />
-                            <AvatarImageSelectorStyled src={codocato_avatar2} />
+                            <Avatar avatar="avatar2" />
+                            <AnimationBlock id="animation2" />
+
                         </label>
 
                         <label>
                             <AvatarRadioStyled type="radio" name="avatar" value="codocato-avatar3.svg" onChange={handleAvatarChange} required />
-                            <AvatarImageSelectorStyled src={codocato_avatar3} />
+                            <Avatar avatar="avatar3" />
+                            <AnimationBlock id="animation3" />
                         </label>
+
                     </RadioButtonsContainerStyled>
                 </div>
+
                 <CreateButtonWrapper>
                     <CreateButtonStyled type="submit" value="CREATE" />
                 </CreateButtonWrapper>
