@@ -1,11 +1,22 @@
 import React, { useEffect, useState } from "react"
 import styled from "styled-components"
 import box from "../assets/box.png"
+import box_boolean from "../assets/box-boolean.svg"
+import box_float from "../assets/box-float.svg"
+import box_integer from "../assets/box-integer.svg"
+import box_string from "../assets/box-string.svg"
 import {motion} from "framer-motion"
 
 const GoalObj = styled.div`
 min-height: 5vh;
 `
+
+const GoalName = styled.h2`
+font-family:'Fresh-Steak';
+color:#fce74a;
+font-size: 3.1vh;
+`
+
 
 const Goal = ({ prompt, setSelectedGoal, completed }) => {
 
@@ -14,11 +25,23 @@ const Goal = ({ prompt, setSelectedGoal, completed }) => {
         setSelectedGoal(prompt.name)
     }
 
+    const checkBoxName = () => {
+        if(prompt.name === "boolean"){
+            return box_boolean
+        }else if(prompt.name === "float"){
+            return box_float
+        } else if(prompt.name === "integer"){
+            return box_integer
+        } else if(prompt.name === "string"){
+            return box_string
+        }
+    }
+
     return (
         <>
             <GoalObj onClick={handleClick}>
                 <motion.img
-                    src={box}
+                    src={checkBoxName()}
                     height="50"
                     whileHover={{
                         rotate: [0, 0, 10, -10, 0],
@@ -26,7 +49,7 @@ const Goal = ({ prompt, setSelectedGoal, completed }) => {
                     }}
                     style={{ height: "10vh" }}
                 />
-                <h2>{prompt.name}</h2>
+                <GoalName>{prompt.name}</GoalName>
                 {completed.includes(prompt.name) ? <p>Correct!</p> : null}
             </GoalObj>
 
