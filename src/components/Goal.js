@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import box from "../assets/box.png"
 import box_boolean from "../assets/box-boolean.svg"
 import box_float from "../assets/box-float.svg"
 import box_integer from "../assets/box-integer.svg"

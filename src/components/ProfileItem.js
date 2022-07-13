@@ -45,8 +45,6 @@ const ProfileItem = ({profile, onProfileClick, setActive, active}) => {
 
   return (
   <>
-    {/* <ProfileAvatarImageStyled src={`http://localhost:8080/${profile.avatar}`}/> */}
-    {/* <li>{profile.avatar}</li> */}
     <ListProfileItemStyled onClick={handleClick} style={profile.id === active ? {backgroundColor: '#FF6666' , color:'white'} : null}> <ProfileAvatarImageStyled src={`http://localhost:8080/${profile.avatar}`}/><ProfileNameWrapper>{profile.name}</ProfileNameWrapper></ListProfileItemStyled>
   </>
   )

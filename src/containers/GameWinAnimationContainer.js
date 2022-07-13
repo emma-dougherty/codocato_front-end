@@ -30,7 +30,7 @@ const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
     return (
         <>
         <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
-            <Animation setAppState = {setAppState} appState = {appState}/>
+            <Animation appState = {appState}/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>
         </>

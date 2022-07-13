@@ -14,7 +14,7 @@ const LContainer = styled.div`
     background-color:#368DCE;
     `
 
-const IntroAnimationContainer = ({setAppState, appState}) => {
+const IntroAnimationContainer = ({setAppState}) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {

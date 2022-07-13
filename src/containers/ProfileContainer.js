@@ -59,7 +59,7 @@ const ProfileContainer = ({savedProfiles, setCurrentProfile, addNewProfile, setA
         <GeneralContainer>
             <GridStyle>
                 <NewProfileForm addNewProfile={addNewProfile}/>
-                <ProfileList savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} setAppState = {setAppState} setCurrentLesson = {setCurrentLesson} setCurrentEnrollment = {setCurrentEnrollment} />
+                <ProfileList savedProfiles = {savedProfiles} setCurrentProfile = {setCurrentProfile} setCurrentLesson = {setCurrentLesson} setCurrentEnrollment = {setCurrentEnrollment} />
             </GridStyle>
             <StartButtonAligner>
                 {currentLesson ? <StartButtonStyled onClick={handleClick}>Start</StartButtonStyled> : null}

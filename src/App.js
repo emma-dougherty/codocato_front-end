@@ -87,7 +87,7 @@ function App() {
           '.link'
         ]} 
       /> */}
-      {appState === "IntroAnimationContainer" && <IntroAnimationContainer setAppState={setAppState} appState={appState} />}
+      {appState === "IntroAnimationContainer" && <IntroAnimationContainer setAppState={setAppState}/>}
       {appState === "ProfileContainer" && <ProfileContainer savedProfiles={savedProfiles} setCurrentProfile={setCurrentProfile} addNewProfile={addNewProfile} setAppState={setAppState} setCurrentLesson={setCurrentLesson} currentLesson={currentLesson} setCurrentEnrollment={setCurrentEnrollment} />}
       {appState === "LessonContainer" && <LessonContainer currentLesson={currentLesson} setAppState={setAppState} />}
       {appState === "AnimationContainer" && <AnimationContainer setAppState={setAppState} currentLesson={currentLesson} appState={appState} />}

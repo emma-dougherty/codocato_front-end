@@ -35,7 +35,7 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
     return (
         <>
         <LContainer bgimage = {`http://localhost:8080/lesson_bgs/${currentLesson.bgImgUrl}`}>
-            <Animation currentLesson = {currentLesson} appState = {appState}/>
+            <Animation appState = {appState}/>
 
         </LContainer>
         {/* <button onClick = {handleClick}>Continue</button> */}

@@ -11,7 +11,7 @@ width: 100vw;
 padding: 0;
 `
 
-const Animation = ({ appState, setAppState, currentLesson }) => {
+const Animation = ({ appState }) => {
 
     // had to add logic below because lottie loads require a direct import
 
@@ -56,17 +56,6 @@ const Animation = ({ appState, setAppState, currentLesson }) => {
                 })
             }
         }
-
-        // console.log(animationToUse)
-
-        // MAYBE HAVE ANOTHER LOOK AT THIS!
-
-        // anim.onLoopComplete = function() {
-        //     setAppState("GameContainer")
-        //     console.log("This is working")
-        // }
-
-        // anim.addEventListener('loopComplete', () => { console.log("This is firing") });
 
 
     }, [])

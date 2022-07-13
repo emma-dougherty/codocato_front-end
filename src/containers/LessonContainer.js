@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import React, { useState} from "react"
 import styled from "styled-components"
 import Prompt from "../components/Prompt"
 import ScoreStar from "../components/ScoreStar"
@@ -15,8 +15,6 @@ const LContainer = styled.div`
     overflow: hidden;
 `
 const StarContainer = styled.div`
-    ${'' /* display: flex;
-    justify-content: center; */}
     width: 40vw;
     margin: auto;
 `
