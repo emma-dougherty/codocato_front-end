@@ -10,7 +10,7 @@ Animations by [emma-dougherty](https://github.com/emma-dougherty/)
 
 **Client:** React, Javascript, HTML5, CSS3 **Server:** Spring, Java, Database: PostgreSQL
 
-##Installation
+## Installation
 
 Note: This setup tutorial assumes that you already have installed a package manager like npm and the version control system git, and that you have IntelliJ IDEA installed on your system. Open your terminal and go to the directory where you would like to save the app in and enter in the following command:
 
