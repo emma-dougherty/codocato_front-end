@@ -19,7 +19,7 @@ const IntroAnimationContainer = ({setAppState}) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAppState("ProfileContainer")
-        }, 5000)
+        }, 6000)
         return () => clearTimeout(timer);
         
     }, [])
