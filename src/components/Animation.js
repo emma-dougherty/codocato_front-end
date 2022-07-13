@@ -8,8 +8,8 @@ import styled from "styled-components"
 
 const AnimationBlock = styled.div`
 width: 100vw;
-height: 100vh;
-padding-top: 10vh;
+${'' /* height: 100vh; */}
+${'' /* padding-top: 10vh; */}
 `
 
 const Animation = ({ appState }) => {

@@ -35,7 +35,7 @@ const StarContainer = styled.div`
 
 const NodeContainer = styled.div`
 display: flex;
-max-width: 40vw;
+max-width: 45vw;
 flex-wrap: wrap;
 justify-content: space-around;
 align-items: center;
