@@ -24,7 +24,7 @@ To install the backend, run the following command (please note: do not run this 
 
 `` git@github.com:emma-dougherty/codocato.git ``
 
-To begin, start up the backend server, by opening the backend folder in IntelliJ. After IntelliJ finishes loading the dependencies, /main/java/com.server.server, right click on the file named ServerApplciation and click 'Run ServerApplication...main()'.
+To begin, start up the backend server, by opening the backend folder in IntelliJ. After IntelliJ finishes loading the dependencies, /main/java/com.server.server, right click on the file named ServerApplication and click 'Run ServerApplication...main()'.
 
 To start the Front End, go to its folder and run the following command:
 
