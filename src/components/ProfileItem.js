@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 
 const ListProfileItemStyled = styled.li`
+display:flex;
+flex-direction:row;
 font-weight: bold;
 list-style-type: none;
 font-size: 2vh;
@@ -17,17 +19,26 @@ font-family: 'Fresh-Steak';
     color: #FFFFFF ;
 }
 padding: 1.5vh;
-border-radius: 0.1vh;
+border-radius: 0.5vh;
 `
 
 const ProfileAvatarImageStyled = styled.img`
 max-height:5vh;
+margin:1vh;
 `
 
-const ProfileItem = ({profile, onProfileClick}) => {
+const ProfileNameWrapper = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+`
+
+const ProfileItem = ({profile, onProfileClick, setActive, active}) => {
 
   const handleClick = function(){
+    setActive(profile.id)
     onProfileClick(profile);
+    console.log(profile.id)
   }
 
   
@@ -36,7 +47,7 @@ const ProfileItem = ({profile, onProfileClick}) => {
   <>
     {/* <ProfileAvatarImageStyled src={`http://localhost:8080/${profile.avatar}`}/> */}
     {/* <li>{profile.avatar}</li> */}
-    <ListProfileItemStyled onClick={handleClick}> <ProfileAvatarImageStyled src={`http://localhost:8080/${profile.avatar}`}/>{profile.name}</ListProfileItemStyled>
+    <ListProfileItemStyled onClick={handleClick} style={profile.id === active ? {backgroundColor: '#FF6666' , color:'white'} : null}> <ProfileAvatarImageStyled src={`http://localhost:8080/${profile.avatar}`}/><ProfileNameWrapper>{profile.name}</ProfileNameWrapper></ListProfileItemStyled>
   </>
   )
 }

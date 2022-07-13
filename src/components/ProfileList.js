@@ -31,7 +31,7 @@ font-family: 'Fresh-Steak';
 
 const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrentLesson, setCurrentEnrollment }) => {
 
- 
+ const [active, setActive] = useState({})
 
     const onProfileClick = (currentProfile) => {
 
@@ -48,7 +48,7 @@ const ProfileList = ({ savedProfiles, setCurrentProfile, setAppState, setCurrent
     }
 
     const profileNodes = savedProfiles.map((profile, index) => {
-        return <ProfileItem onProfileClick={onProfileClick} profile={profile} key={index}/>
+        return <ProfileItem onProfileClick={onProfileClick} profile={profile} key={index} active= {active} setActive= {setActive} />
     }
     )  
     
