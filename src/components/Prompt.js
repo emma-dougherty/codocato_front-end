@@ -10,6 +10,10 @@ height : 8vh;
 position: absolute;
 top: ${props => `${props.positionX}vh`};
 left:${props => `${props.positionY}vw`};
+cursor: pointer;
+&:hover {
+    height: 9vh;
+}
 `
 
 const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
@@ -41,13 +45,14 @@ const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
                 className = "prompt-popup-modal"
                 overlayClassName = "prompt-popup-modal-overlay"
             >
-                <img src={`http://localhost:8080/${prompt.imageSrc}`} id="prompt-title"/>
+                <img src={`http://localhost:8080/${prompt.imageSrc}`} id="prompt-title" />
                 <p id="prompt-fact">{prompt.fact}</p>
             </Modal>
             </ModalWrapper>
 
 
-            <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} positionX={prompt.positionX} positionY={prompt.positionY} />
+            <ImagePrompt src={`http://localhost:8080/${prompt.imageSrc}`} onClick={handleClick} positionX={prompt.positionX} positionY={prompt.positionY}/>
+
 
         </>
     )
