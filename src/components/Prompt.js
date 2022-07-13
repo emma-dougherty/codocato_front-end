@@ -79,8 +79,8 @@ const Prompt = ({ prompt, setClickedPrompts, clickedPrompts }) => {
                 className = "prompt-popup-modal"
                 overlayClassName = "prompt-popup-modal-overlay"
             >
-                <h3>{prompt.name}</h3>
-                <p>{prompt.fact}</p>
+                <img src={`http://localhost:8080/${prompt.imageSrc}`} id="prompt-title"/>
+                <p id="prompt-fact">{prompt.fact}</p>
             </Modal>
             </ModalWrapper>
 
