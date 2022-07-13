@@ -6,6 +6,7 @@ import styled from "styled-components"
 const StyledStart = styled.div`
 height: 100%;
 width:100%;
+cursor: pointer;
 `
 
 const ScoreStar = ({ setAppState, nextState }) => {
