@@ -8,6 +8,7 @@ import box_string from "../assets/box-string.svg"
 import {motion} from "framer-motion"
 
 const GoalObj = styled.div`
+font-family:'Fresh-Steak';
 min-height: 5vh;
 `
 
