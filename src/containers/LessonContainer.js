@@ -26,6 +26,26 @@ display: flex;
 justify-content: space-around;
 `
 
+const Button = styled.button`
+position: relative;
+left: 75vw;
+top: 65vh;
+background-color: #368DCE;
+border-radius: 100%;
+padding: 6vh;
+border:0px;
+cursor:pointer;
+margin: 0vh;
+font-family: 'Fresh-Steak';
+color:#fff;
+font-size:5vh;
+&:hover{
+    background-color: #1267a8;
+    color:#fff;
+}
+
+`
+
 const LessonContainer = ({ currentLesson, setAppState }) => {
 
 
@@ -33,16 +53,20 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
     const [clickedPrompts, setClickedPrompts] = useState([])
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    useEffect(() => {
-        if (clickedPrompts.length == 4) {
-            setIsModalOpen(true)
-        }
-    }, [clickedPrompts])
+    // useEffect(() => {
+    //     if (clickedPrompts.length == 4) {
+    //         setIsModalOpen(true)
+    //     }
+    // }, [clickedPrompts])
 
 
     const promptNodes = currentLesson.prompts.map((prompt, index) => {
         return <Prompt prompt={prompt} setClickedPrompts={setClickedPrompts} clickedPrompts={clickedPrompts} key={index} />
     })
+
+    const handleClick = () => {
+        setIsModalOpen(true)
+    }
 
     return (
         <>
@@ -53,6 +77,10 @@ const LessonContainer = ({ currentLesson, setAppState }) => {
                 <PromptContainer>
                     {promptNodes}
                 </PromptContainer>
+
+                <div>
+                {clickedPrompts.length ==4? <Button onClick = {handleClick}>continue</Button> : null}
+                </div>
             </LContainer>
 
             <Modal
