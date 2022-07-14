@@ -1,8 +1,8 @@
 import React, { useEffect } from "react"
 import lottie from "lottie-web"
-import codocato_avatar1 from "../assets/codocato_avatar1.json"
-import codocato_avatar2 from "../assets/codocato_avatar2.json"
-import codocato_avatar3 from "../assets/codocato_avatar3.json"
+import codocato_avatar1 from "../assets/codocato-avatar1a.json"
+import codocato_avatar2 from "../assets/codocato-avatar2a.json"
+import codocato_avatar3 from "../assets/codocato-avatar3a.json"
 
 const Avatar = ({ avatar }) => {
 

@@ -1,21 +1,21 @@
 import React from "react"
 import styled from "styled-components"
-import box_boolean from "../assets/box-boolean.svg"
-import box_float from "../assets/box-float.svg"
-import box_integer from "../assets/box-integer.svg"
-import box_string from "../assets/box-string.svg"
+import box_boolean from "../assets/box-boolean-a.svg"
+import box_float from "../assets/box-float-a.svg"
+import box_integer from "../assets/box-integer-a.svg"
+import box_string from "../assets/box-string-a.svg"
 import {motion} from "framer-motion"
 
 const GoalObj = styled.div`
 font-family:'Fresh-Steak';
-min-height: 5vh;
+min-height: 10vh;
 `
 
-const GoalName = styled.h2`
-font-family:'Fresh-Steak';
-color:#fce74a;
-font-size: 3.1vh;
-`
+// const GoalName = styled.h2`
+// font-family:'Fresh-Steak';
+// color:#fce74a;
+// font-size: 3.1vh;
+// `
 
 
 const Goal = ({ prompt, setSelectedGoal, completed }) => {
@@ -47,9 +47,9 @@ const Goal = ({ prompt, setSelectedGoal, completed }) => {
                         rotate: [0, 0, 10, -10, 0],
                         scale: 1.05
                     }}
-                    style={{ height: "10vh" }}
+                    style={{ height: "20vh" }}
                 />
-                <GoalName>{prompt.name}</GoalName>
+                {/* <GoalName>{prompt.name}</GoalName> */}
                 {completed.includes(prompt.name) ? <p>Correct!</p> : null}
             </GoalObj>
 

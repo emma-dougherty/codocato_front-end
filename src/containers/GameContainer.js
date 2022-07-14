@@ -6,9 +6,9 @@ import ScoreStar from "../components/ScoreStar"
 import Modal from "react-modal"
 
 const Wrapper = styled.div`
-background-image: repeating-linear-gradient(45deg, #eec43b 0, #eec43b 2.5px, transparent 0, transparent 50%);
+background-image: repeating-linear-gradient(45deg, #368DCE 0, #BEDEF4 2.5px, transparent 0, transparent 50%);
 background-size: 16px 16px;
-background-color: #f4eedc;
+background-color: #bedef4;
 height: 100vh;
 width: 100vw;
 display: flex;
@@ -19,12 +19,12 @@ const GameWrapper = styled.div`
 padding-top: 20vh;
 max-width: 50vw;
 margin: auto;
-border: solid 2vw #368DCE;
+border: solid 2vw #98bbee;
 border-radius: 5vw;
-background-color: #FF6666;
+background-color: #FF99CC;
 display: flex;
 justify-content: center;
-padding: 10vh;
+padding: 5vh;
 
 `
 
@@ -37,11 +37,11 @@ const NodeContainer = styled.div`
 display: flex;
 max-width: 45vw;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: space-evenly;
 align-items: center;
 align-content: center;
 gap: 5vw;
-row-gap: 20vh;
+row-gap: 10vh;
 `
 
 const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
@@ -58,10 +58,10 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
     }, [selectedGoal, selectedPrompt])
 
     useEffect(() => {
-        if (completed.length == 4){
+        if (completed.length == 4) {
             setIsModalOpen(true)
-        }   
-     }, [completed])
+        }
+    }, [completed])
 
 
     const checkCorrect = () => {
@@ -77,7 +77,7 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
     const promptsAndGoals = []
 
     currentLesson.prompts.map((prompt, index) => {
-        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="b" setSelectedPrompt={setSelectedPrompt} completed = {completed} />
+        const newPrompt = <GamePrompt prompt={prompt} id="prompt" grid-area="b" setSelectedPrompt={setSelectedPrompt} completed={completed} />
         promptsAndGoals.unshift(newPrompt)
 
         const newGoal = <Goal prompt={prompt} id="prompt" grid-area="a" setSelectedGoal=
@@ -101,11 +101,11 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
 
     return (
         <>
-        <Modal
+            <Modal
                 isOpen={isModalOpen}
                 ariaHideApp={false}
                 contentLabel="User options"
-                style = {{
+                style={{
                     overlay: {
                         backgroundColor: 'rgba(0,0,0, 0.5)',
                         overflow: "hidden"
@@ -117,9 +117,9 @@ const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {
                     }
                 }}
             >
-                    <StarContainer onClick = {handleClick}>
-                    {completed.length == 4 ? <ScoreStar setAppState={setAppState} nextState = "GameWinAnimationContainer" /> : null}
-                    </StarContainer>
+                <StarContainer onClick={handleClick}>
+                    {completed.length == 4 ? <ScoreStar setAppState={setAppState} nextState="GameWinAnimationContainer" /> : null}
+                </StarContainer>
             </Modal>
             <Wrapper>
                 <GameWrapper>

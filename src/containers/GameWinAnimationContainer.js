@@ -1,10 +1,10 @@
 import React, {useEffect} from "react"
 import styled from "styled-components"
 import Animation from "../components/Animation"
-import lesson2_bg from "../assets/lesson2-intro-bg.jpg"
+// import lesson2_bg from "../assets/lesson2-intro-bg.jpg"
 
 const LContainer = styled.div`
-    background-image: ${props => `url(${props.bgimage})`};
+    background-color: #368DCE;
     background-size: cover;
     height: 100vh;
     max-height: 100vh;
@@ -19,7 +19,7 @@ const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setAppState("LessonContainer")
-        }, 15100)
+        }, 16000)
         return () => clearTimeout(timer);
         
     }, [])
@@ -30,7 +30,8 @@ const GameWinAnimationContainer = ({appState, setAppState, currentLesson}) => {
     
     return (
         <>
-        <LContainer bgimage = {lesson2_bg}>
+        <LContainer >
+        {/* bgimage = {lesson2_bg} */}
             <Animation appState = {appState}/>
         </LContainer>
         <button onClick = {handleClick}>Continue</button>

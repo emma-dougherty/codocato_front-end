@@ -23,7 +23,7 @@ const AnimationContainer = ({appState, setAppState, currentLesson}) => {
         const timer = setTimeout(() => {
             setAppState("LessonContainer")
 
-        }, 10000)
+        }, 16010)
         return () => clearTimeout(timer);
         
     }, [])
