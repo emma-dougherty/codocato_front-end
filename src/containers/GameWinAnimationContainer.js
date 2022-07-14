@@ -4,7 +4,7 @@ import Animation from "../components/Animation"
 import lesson2_bg from "../assets/lesson2-intro-bg.jpg"
 
 const LContainer = styled.div`
-    background-image: ${props => `url(${props.bgimage})`};
+    background-color: #368DCE;
     background-size: cover;
     height: 100vh;
     max-height: 100vh;

@@ -6,13 +6,13 @@ const ModalWrapper = styled.div`
 `
 
 const ImagePrompt = styled.img`
-height : 8vh;
+height : 30vh;
 position: absolute;
 top: ${props => `${props.positionX}vh`};
 left:${props => `${props.positionY}vw`};
 cursor: pointer;
 &:hover {
-    height: 9vh;
+    height: 31vh;
 }
 `
 
