@@ -58,27 +58,24 @@
   margin-top: 20vh;
   border: solid 1vw #368DCE;
   border-radius: 3vw;
-  padding: 1vh 2vw 1vh 2vw;
+  padding: 0.1vh 2vw 1vh 2vw;
   z-index: -1;
   overflow: hidden;
 }
 
 #prompt-title {
-  /* font-family: 'Fresh-Steak';
-  font-size: 10%;
-  color:  #003399;
-  text-align: center; */
-  margin-top: 5vh;
-  padding-bottom: 5vh;
-  max-height: 10vh;
+  /* padding-bottom: 0.2vh; */
+  height: 35vh;
   display: block;
+  margin-top: 0%;
   margin-left: auto;
   margin-right: auto;
 }
 
 #prompt-fact {
   font-family: 'Fresh-Steak';
-  font-size: 500%;
+  font-size: 400%;
+  margin-top: 0%;
   color:  #000000;
   text-align: center;
 }
