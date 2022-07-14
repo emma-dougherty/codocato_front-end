@@ -47,7 +47,7 @@ const Goal = ({ prompt, setSelectedGoal, completed }) => {
                         rotate: [0, 0, 10, -10, 0],
                         scale: 1.05
                     }}
-                    style={{ height: "10vh" }}
+                    style={{ height: "20vh" }}
                 />
                 {/* <GoalName>{prompt.name}</GoalName> */}
                 {completed.includes(prompt.name) ? <p>Correct!</p> : null}

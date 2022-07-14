@@ -24,7 +24,7 @@ border-radius: 5vw;
 background-color: #FF99CC;
 display: flex;
 justify-content: center;
-padding: 10vh;
+padding: 5vh;
 
 `
 
@@ -37,11 +37,11 @@ const NodeContainer = styled.div`
 display: flex;
 max-width: 45vw;
 flex-wrap: wrap;
-justify-content: space-around;
+justify-content: space-evenly;
 align-items: center;
 align-content: center;
 gap: 5vw;
-row-gap: 20vh;
+row-gap: 10vh;
 `
 
 const GameContainer = ({ setAppState, updateCurrentLesson, currentLesson }) => {

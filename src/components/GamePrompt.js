@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { motion } from "framer-motion"
 
 const PromptObj = styled.div`
-    max-height: 3vh;
+    max-height: 1vh;
     opacity: ${props => `${props.opacity}`}
 `
 
