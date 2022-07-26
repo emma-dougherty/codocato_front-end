@@ -1,6 +1,6 @@
 https://user-images.githubusercontent.com/101479360/181003089-deeef13e-386e-42a9-9880-dfb0a5358637.mp4
 
-N.B. Everything's a bit sped up in the vid so that you can see the whole thing!
+N.B. Everything's a bit sped up in the vid so that you can see the whole thing.
 
 
 # Codo Cato
