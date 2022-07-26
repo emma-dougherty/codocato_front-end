@@ -1,8 +1,3 @@
-https://user-images.githubusercontent.com/101479360/181003089-deeef13e-386e-42a9-9880-dfb0a5358637.mp4
-
-N.B. Everything is sped up in the video, so that you get to see the whole thing.
-
-
 # Codo Cato
 
 Join the coding dojo and learn the basics with Mrs. Meowgi in this educational app for younger children. 
@@ -14,6 +9,11 @@ Illustration & animation by [emma-dougherty](https://github.com/emma-dougherty/)
 ## Tech Stack
 
 **Client:** React, Javascript, HTML5, CSS3 **Server:** Spring, Java, Database: PostgreSQL
+
+https://user-images.githubusercontent.com/101479360/181003089-deeef13e-386e-42a9-9880-dfb0a5358637.mp4
+
+N.B. Everything is sped up in the video, so that you get to see the whole thing.
+
 
 ## Installation
 
