@@ -8,7 +8,7 @@ Join the coding dojo and learn the basics with Mrs. Meowgi in this educational a
 
 Currently includes one lesson and game as proof of concept.
 
-Animations by [emma-dougherty](https://github.com/emma-dougherty/)
+Illustration & animation by [emma-dougherty](https://github.com/emma-dougherty/)
 
 ## Tech Stack
 
