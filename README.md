@@ -1,3 +1,9 @@
+Uploading CodoCato.mp4…
+
+
+
+
+
 # Codo Cato
 
 Join the coding dojo and learn the basics with Mrs. Meowgi in this educational app for younger children. 
@@ -14,7 +20,7 @@ Animations by [emma-dougherty](https://github.com/emma-dougherty/)
 
 Note: This setup tutorial assumes that you already have installed a package manager like npm and the version control system git, and that you have IntelliJ IDEA installed on your system. Open your terminal and go to the directory where you would like to save the app in and enter in the following command:
 
-  ``git@github.com:mattnorris1990/codocato_front_end.git``
+  ``git@github.com:emma-dougherty/codocato_front_end.git``
  
 Once the download has ended, run the following command:
 
